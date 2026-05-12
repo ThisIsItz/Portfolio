@@ -1,26 +1,13 @@
-import { Box, Flex, Image } from '@chakra-ui/react'
-import './App.css'
-import IntroductionPage from './landing-page/IntroductionPage.tsx'
-import React from 'react'
-import laptopHands from '../src/images/laptop-hands.avif'
-import MyProjects from './landing-page/MyProjects.tsx'
-
-function App() {
+export const App = () => {
   return (
-    <Box>
-      <Flex justifyContent="center" h="100vh" w="100vw">
-        <Image src={laptopHands} h="100vh" w="100vw" position="absolute" />
-        <Box
-          background="black"
-          opacity="0.5"
-          h="100vh"
-          w="100vw"
-          position="absolute"
-        />
-        <IntroductionPage />
-      </Flex>
-      {/* <MyProjects /> */}
-    </Box>
+    <div className="min-h-screen bg-white">
+      <header className="bg-slate-900 text-white p-6">
+        <h1 className="text-3xl font-bold">Mi Portafolio</h1>
+      </header>
+      <main className="p-6">
+        <p className="text-gray-700">Empieza a construir aquí...</p>
+      </main>
+    </div>
   )
 }
 
