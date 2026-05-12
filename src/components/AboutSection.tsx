@@ -1,4 +1,5 @@
 import { Download } from 'lucide-react'
+import cvPdf from '@/assets/Itziar-Urbieta-CV.pdf'
 
 export const AboutSection = () => {
   return (
@@ -32,7 +33,8 @@ export const AboutSection = () => {
                 Get In Touch
               </a>
               <a
-                href=""
+                href={cvPdf}
+                download
                 className="flex items-center justify-center gap-2 px-6 py-2 rounded-full border border-primary text-primary hover:bg-primary/10 transition-colors duration-300"
               >
                 <Download className="size-4" />
