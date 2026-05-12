@@ -1,5 +1,6 @@
-import { Download } from 'lucide-react'
+import { Briefcase, Code, Download, User } from 'lucide-react'
 import cvPdf from '@/assets/Itziar-Urbieta-CV.pdf'
+import { AboutFeatureCard } from '@/components/AboutFeatureCard'
 
 export const AboutSection = () => {
   return (
@@ -42,8 +43,23 @@ export const AboutSection = () => {
               </a>
             </div>
           </div>
-          <div></div>
-          <div></div>
+          <div className="grid grid-cols-1 gap-6">
+            <AboutFeatureCard
+              icon={Code}
+              title="Web Development"
+              description="Add some text here"
+            />
+            <AboutFeatureCard
+              icon={User}
+              title="User Experience"
+              description="Add some text here"
+            />
+            <AboutFeatureCard
+              icon={Briefcase}
+              title="Project Management"
+              description="Add some text here"
+            />
+          </div>
         </div>
       </div>
     </section>
