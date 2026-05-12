@@ -1,13 +1,17 @@
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { Home } from './pages/Home'
+import { NotFound } from './pages/NotFound'
+
 export const App = () => {
   return (
-    <div className="min-h-screen bg-white">
-      <header className="bg-slate-900 text-white p-6">
-        <h1 className="text-3xl font-bold">My portfolio</h1>
-      </header>
-      <main className="p-6">
-        <p className="text-gray-700">Portfolio content</p>
-      </main>
-    </div>
+    <>
+      <BrowserRouter>
+        <Routes>
+          <Route index element={<Home />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </BrowserRouter>
+    </>
   )
 }
 
