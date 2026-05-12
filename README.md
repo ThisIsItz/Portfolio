@@ -1,11 +1,12 @@
 # My Portfolio
 
-Personal portfolio built with [Vite](https://vitejs.dev/), [React](https://react.dev/), and [Tailwind CSS](https://tailwindcss.com/).
+Personal portfolio built with [Vite](https://vitejs.dev/), [React](https://react.dev/), [TypeScript](https://www.typescriptlang.org/), and [Tailwind CSS](https://tailwindcss.com/).
 
 ## Tech Stack
 
 - **Vite** - Fast, modern build tool
 - **React 18** - UI library
+- **TypeScript** - Static typing for safer development
 - **Tailwind CSS** - Utility-first CSS framework
 - **GitHub Pages** - Hosting
 
@@ -59,11 +60,18 @@ npm run deploy
 ├── public/             # Static assets
 │   └── code.ico        # Favicon
 ├── src/
-│   ├── main.jsx        # React entry point
-│   ├── App.jsx         # Main component
-│   └── index.css       # Tailwind CSS import
+│   ├── main.tsx        # React entry point
+│   ├── App.tsx         # Main component
+│   └── styles/
+│      └── index.css    # Tailwind CSS import
 └── dist/               # Production build output (generated)
 ```
+
+## Important Note
+
+- Do not manually edit files in `dist/`.
+- `dist/` is generated automatically when running `npm run build`.
+- Always edit source files inside `src/`.
 
 ## Deployment
 
