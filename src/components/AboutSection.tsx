@@ -7,7 +7,7 @@ export const AboutSection = () => {
     <section id="about" className="py-24 px-4 relative">
       <div className="container mx-auto max-w-5xl">
         <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
-          About<span className="text-primary">Me</span>
+          About<span className="text-primary"> Me</span>
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
@@ -15,19 +15,15 @@ export const AboutSection = () => {
               Passionate Frontend Developer and problem solver
             </h3>
             <p className="text-muted-foreground">
-              I'm a Senior Frontend Engineer with 7+ years of experience
-              building web applications, SaaS products, admin dashboards, and
-              internal tools.
+              I'm a Frontend Engineer with 7+ years of experience building SaaS
+              products, admin dashboards, and internal tools while working with
+              remote teams.
             </p>
+
             <p className="text-muted-foreground">
-              I have a strong background in React, TypeScript, GraphQL, Next.js,
-              and Go, with experience across data-heavy interfaces, complex
-              tables, legacy migrations, and product-focused UI development.
-            </p>
-            <p className="text-muted-foreground">
-              I'm experienced working remotely with US and UK teams in
-              fast-moving product environments, and I'm always learning and
-              improving how I build software.
+              I enjoy solving complex UI problems, improving user workflows, and
+              building maintainable frontend applications in fast-moving product
+              environments.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center">
               <a href="#contact" className="cosmic-button">
@@ -46,18 +42,20 @@ export const AboutSection = () => {
           <div className="grid grid-cols-1 gap-6">
             <AboutFeatureCard
               icon={Code}
-              title="Web Development"
-              description="Add some text here"
+              title="Frontend Development"
+              description="Building maintainable, user-facing features across modern SaaS products and internal platforms."
             />
-            <AboutFeatureCard
-              icon={User}
-              title="User Experience"
-              description="Add some text here"
-            />
+
             <AboutFeatureCard
               icon={Briefcase}
-              title="Project Management"
-              description="Add some text here"
+              title="Dashboards & Internal Tools"
+              description="Experienced with data-heavy interfaces, complex tables, filters, admin workflows, and business tools."
+            />
+
+            <AboutFeatureCard
+              icon={User}
+              title="Product-Focused UI"
+              description="Turning product requirements and user workflows into clear, practical, and easy-to-use interfaces."
             />
           </div>
         </div>
