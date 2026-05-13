@@ -5,6 +5,7 @@ import { cn } from '@/lib/utils'
 import { useToast } from '@/hooks/use-toast'
 import { useState, type FormEvent } from 'react'
 import emailjs from '@emailjs/browser'
+import { FaGithub, FaLinkedinIn } from 'react-icons/fa'
 
 export const ContactSection = () => {
   const { toast } = useToast()
@@ -105,9 +106,24 @@ export const ContactSection = () => {
             <div className="pt-8">
               <h4 className="font-medium mb-4 ">Connect With Me</h4>
               <div className="flex space-x-4 justify-center">
-                <a>IN</a>
-                <a>GH</a>
-                <a>TW</a>
+                <a
+                  href="https://www.linkedin.com/in/itziarurbieta"
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="LinkedIn"
+                  className="inline-flex items-center justify-center rounded-md border border-foreground/20 p-2 text-foreground transition-colors hover:bg-foreground hover:text-background"
+                >
+                  <FaLinkedinIn size={18} />
+                </a>
+                <a
+                  href="https://github.com/thisisitz"
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="GitHub"
+                  className="inline-flex items-center justify-center rounded-md border border-foreground/20 p-2 text-foreground transition-colors hover:bg-foreground hover:text-background"
+                >
+                  <FaGithub size={18} />
+                </a>
               </div>
             </div>
           </div>
