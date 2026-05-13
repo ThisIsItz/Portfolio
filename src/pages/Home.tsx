@@ -4,6 +4,7 @@ import { StarBackground } from '../components/StarBackground'
 import { ThemeToggle } from '../components/ThemeToggle'
 import { AboutSection } from '@/components/AboutSection'
 import { SkillSection } from '@/components/SkillSection'
+import { ProjectsSection } from '@/components/ProjectsSection'
 
 export const Home = () => {
   return (
@@ -15,6 +16,7 @@ export const Home = () => {
         <HeroSection />
         <AboutSection />
         <SkillSection />
+        <ProjectsSection />
       </main>
     </div>
   )
