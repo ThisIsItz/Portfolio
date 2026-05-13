@@ -1,6 +1,25 @@
 import { ArrowDown } from 'lucide-react'
+import { useEffect, useState } from 'react'
 
 export const HeroSection = () => {
+  const [visible, setVisible] = useState(true)
+
+  useEffect(() => {
+    let timeout: ReturnType<typeof setTimeout>
+
+    const handleScroll = () => {
+      setVisible(false)
+      clearTimeout(timeout)
+      timeout = setTimeout(() => setVisible(true), 800)
+    }
+
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+      clearTimeout(timeout)
+    }
+  }, [])
+
   return (
     <section
       id="hero"
@@ -29,7 +48,9 @@ export const HeroSection = () => {
           </div>
         </div>
       </div>
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center animate-bounce">
+      <div
+        className={`absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center animate-bounce transition-opacity duration-500 ${visible ? 'opacity-100' : 'opacity-0'}`}
+      >
         <span className="text-small text-muted-foreground mb-2"> Scroll</span>
         <ArrowDown className="size-5 text-primary" />
       </div>
