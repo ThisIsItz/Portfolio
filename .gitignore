@@ -12,8 +12,12 @@
 /build
 /dist
 
+# vite
+.vite/
+
 # misc
 .DS_Store
+.vscode/settings.json
 .env
 .env.local
 .env.development.local
