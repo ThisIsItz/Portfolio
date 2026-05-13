@@ -56,9 +56,9 @@ export const Navbar = () => {
           </span>
         </a>
         <div className="hidden md:flex space-x-8">
-          {navItems.map((item, key) => (
+          {navItems.map((item, i) => (
             <a
-              key={key}
+              key={i}
               href={item.href}
               className="text-foreground/80 hover:text-primary transition-colors duration-300"
             >
