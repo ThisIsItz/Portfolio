@@ -89,7 +89,8 @@ export const ContactSection = () => {
           Get In <span className="text-primary"> Touch</span>
         </h2>
         <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-          Some text here
+          Interested in working together or discussing a potential opportunity?
+          I'd love to hear from you.
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           <div className="space-y-8">
