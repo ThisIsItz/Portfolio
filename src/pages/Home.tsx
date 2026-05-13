@@ -5,6 +5,7 @@ import { ThemeToggle } from '../components/ThemeToggle'
 import { AboutSection } from '@/components/AboutSection'
 import { SkillSection } from '@/components/SkillSection'
 import { ProjectsSection } from '@/components/ProjectsSection'
+import { ContactSection } from '@/components/ContactSection'
 
 export const Home = () => {
   return (
@@ -17,6 +18,7 @@ export const Home = () => {
         <AboutSection />
         <SkillSection />
         <ProjectsSection />
+        <ContactSection />
       </main>
     </div>
   )
