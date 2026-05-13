@@ -1,5 +1,6 @@
 import { cn } from '@/lib/utils'
 import { useState } from 'react'
+import { SectionHeading } from '@/components/SectionHeading'
 
 const skillFilters = ['all', 'frontend', 'backend', 'testing', 'tools'] as const
 
@@ -52,9 +53,7 @@ export const SkillSection = () => {
   return (
     <section id="skills" className="py-24 px-4 relative bg-secondary/30">
       <div className="container mx-auto max-w-5xl">
-        <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
-          My <span className="text-primary">Skills</span>
-        </h2>
+        <SectionHeading prefix="My" highlight="Skills" />
 
         <div className="flex flex-wrap justify-center gap-4 mb-12">
           {skillFilters.map((category) => (

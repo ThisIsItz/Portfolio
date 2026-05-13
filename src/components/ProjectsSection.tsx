@@ -1,4 +1,5 @@
 import { ArrowRight, ExternalLink } from 'lucide-react'
+import { SectionHeading } from '@/components/SectionHeading'
 
 interface Project {
   id: number
@@ -44,9 +45,11 @@ export const ProjectsSection = () => {
   return (
     <section id="projects" className="py-24 px-4 relative">
       <div className="container mx-auto max-w-5xl">
-        <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">
-          Featured <span className="text-primary"> Projects</span>
-        </h2>
+        <SectionHeading
+          prefix="Featured"
+          highlight="Projects"
+          className="mb-4"
+        />
 
         <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
           A selection of projects I've worked on. Each project was built with a
