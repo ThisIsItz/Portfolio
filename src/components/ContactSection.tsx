@@ -1,4 +1,4 @@
-import { Loader2, Mail, Send } from 'lucide-react'
+import { Globe, Loader2, Mail, Send } from 'lucide-react'
 import { ContactItem } from '@/components/ContactItem'
 import { ContactFormField } from '@/components/ContactFormField'
 import { cn } from '@/lib/utils'
@@ -102,6 +102,11 @@ export const ContactSection = () => {
                 value="itziarurbieta94@gmail.com"
                 href="mailto:itziarurbieta94@gmail.com"
               />
+              <ContactItem
+                icon={Globe}
+                label="Work Preference"
+                value="Remote-first"
+              />
             </div>
 
             <div className="pt-8">
@@ -112,7 +117,7 @@ export const ContactSection = () => {
                   target="_blank"
                   rel="noreferrer"
                   aria-label="LinkedIn"
-                  className="inline-flex items-center justify-center rounded-md border border-foreground/20 p-2 text-foreground transition-colors hover:bg-foreground hover:text-background"
+                  className="inline-flex items-center justify-center p-2 text-foreground transition-colors hover:text-primary"
                 >
                   <FaLinkedinIn size={18} />
                 </a>
@@ -121,7 +126,7 @@ export const ContactSection = () => {
                   target="_blank"
                   rel="noreferrer"
                   aria-label="GitHub"
-                  className="inline-flex items-center justify-center rounded-md border border-foreground/20 p-2 text-foreground transition-colors hover:bg-foreground hover:text-background"
+                  className="inline-flex items-center justify-center p-2 text-foreground transition-colors hover:text-primary"
                 >
                   <FaGithub size={18} />
                 </a>
@@ -173,7 +178,7 @@ export const ContactSection = () => {
                   placeholder="Type your message here..."
                   required
                   disabled={isLoading}
-                  className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-hidden focus:ring-2 focus:ring-primary resize-none"
+                  className="w-full px-4 py-3 rounded-full border border-input bg-background focus:outline-hidden focus:ring-2 focus:ring-primary resize-none"
                 />
               </div>
               <button
