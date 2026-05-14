@@ -62,11 +62,11 @@ export const Navbar = () => {
             className="text-xl font-bold text-primary flex items-center"
             href="#hero"
           >
-            <span className="relative z-10">
+            <span className="relative z-10 font-grotesk">
               <span className="text-glow text-foreground">Itziar</span> Urbieta
             </span>
           </a>
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-8 font-grotesk">
             {navItems.map((item, i) => (
               <a
                 key={i}
@@ -105,7 +105,7 @@ export const Navbar = () => {
             : 'opacity-0 pointer-events-none'
         )}
       >
-        <div className="flex flex-col space-y-8 text-xl">
+        <div className="flex flex-col space-y-8 text-xl font-grotesk">
           {navItems.map((item, key) => (
             <a
               key={key}

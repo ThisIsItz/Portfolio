@@ -31,7 +31,7 @@ export const AboutSection = () => {
               <a
                 href={cvPdf}
                 download
-                className="flex items-center justify-center gap-2 px-6 py-2 rounded-full border border-primary text-primary hover:bg-primary/10 transition-colors duration-300"
+                className="font-grotesk flex items-center justify-center gap-2 px-6 py-2 rounded-full border border-primary text-primary hover:bg-primary/10 transition-colors duration-300"
               >
                 <Download className="size-4" />
                 Download CV
