@@ -14,14 +14,10 @@ interface ThemeContextType {
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined)
 
 export const ThemeProvider = ({ children }: { children: ReactNode }) => {
-  const [isDark, setIsDark] = useState(() => {
-    if (typeof window !== 'undefined') {
-      const savedTheme = localStorage.getItem('theme')
-
-      return savedTheme ? savedTheme === 'dark' : true
-    }
-    return false
-  })
+  const [isDark, setIsDark] = useState(
+    () =>
+      typeof window !== 'undefined' && localStorage.getItem('theme') === 'dark'
+  )
 
   useEffect(() => {
     document.documentElement.classList.toggle('dark', isDark)
