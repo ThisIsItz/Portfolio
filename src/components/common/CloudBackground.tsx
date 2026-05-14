@@ -31,7 +31,7 @@ const createCloudLayer = (
       size: sizeMin + Math.random() * (sizeMax - sizeMin),
       top: topMin + Math.random() * (topMax - topMin),
       duration,
-      delay: -(duration / count) * index,
+      delay: -Math.random() * duration,
       opacity: opacityMin + Math.random() * (opacityMax - opacityMin)
     })
   }
@@ -44,30 +44,59 @@ export const CloudBackground = () => {
 
   useEffect(() => {
     const generateClouds = () => {
-      const baseCount = Math.max(6, Math.floor(window.innerWidth / 220))
+      const viewportWidth = window.innerWidth
+      const viewportArea = window.innerWidth * window.innerHeight
+
+      const nearDurationRange =
+        viewportWidth < 640
+          ? [34, 48]
+          : viewportWidth < 1200
+            ? [46, 64]
+            : [60, 86]
+
+      const farDurationRange =
+        viewportWidth < 640
+          ? [48, 68]
+          : viewportWidth < 1200
+            ? [62, 86]
+            : [78, 108]
+
+      const nearCount =
+        viewportWidth < 640
+          ? 2
+          : viewportWidth < 900
+            ? 3
+            : Math.min(7, Math.max(4, Math.round(viewportArea / 220000)))
+
+      const farCount =
+        viewportWidth < 640
+          ? 1
+          : viewportWidth < 900
+            ? 2
+            : Math.max(2, Math.round(nearCount * 0.6))
 
       const nearClouds = createCloudLayer(
         'near',
-        baseCount,
+        nearCount,
         14,
         56,
         140,
         220,
-        42,
-        56,
+        nearDurationRange[0],
+        nearDurationRange[1],
         0.5,
         0.68
       )
 
       const farClouds = createCloudLayer(
         'far',
-        Math.max(4, Math.floor(baseCount * 0.7)),
+        farCount,
         8,
         40,
         100,
         160,
-        60,
-        78,
+        farDurationRange[0],
+        farDurationRange[1],
         0.32,
         0.5
       )
@@ -98,6 +127,7 @@ export const CloudBackground = () => {
           style={{
             width: `${cloud.size}px`,
             height: `${cloud.size * 0.4}px`,
+            left: `${-(cloud.size * 1.35)}px`,
             top: `${cloud.top}%`,
             opacity: cloud.opacity,
             animationDuration: `${cloud.duration}s`,
