@@ -23,12 +23,20 @@ const projects: Project[] = [
     tags: ['React', 'TypeScript', 'GraphQL', 'Go', 'PostgreSQL']
   },
   {
+    id: 4,
+    name: 'Layer Z',
+    description: 'Description of Layer Z.',
+    image: 'projects/layerz.jpeg',
+    url: 'https://layerz.com/',
+    tags: ['Vue', 'TypeScript']
+  },
+  {
     id: 2,
     name: 'Alitu',
     description: 'Description of Alitu, a podcast editing and production tool.',
     image: 'projects/alitu.jpg',
     url: 'https://alitu.com',
-    tags: ['React', 'TypeScript', 'GraphQL', 'PostgreSQL']
+    tags: ['React', 'TypeScript', 'GraphQL', 'Apollo', 'PostgreSQL']
   },
   {
     id: 3,
@@ -45,16 +53,12 @@ export const WorkSection = () => {
   return (
     <section id="work" className="py-24 px-4 relative">
       <div className="container mx-auto max-w-5xl">
-        <SectionHeading
-          prefix="Featured"
-          highlight="Projects"
-          className="mb-4"
-        />
+        <SectionHeading prefix="Selected" highlight="Work" className="mb-4" />
 
         <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-          A selection of projects I've worked on. Each project was built with a
-          focus on clean, scalable interfaces, attention to detail, performance,
-          and user experience.
+          A selection of commercial products I’ve contributed to, with a focus
+          on clean, scalable interfaces, attention to detail, performance, and
+          user experience.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
