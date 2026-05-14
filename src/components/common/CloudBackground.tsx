@@ -49,8 +49,8 @@ export const CloudBackground = () => {
       const nearClouds = createCloudLayer(
         'near',
         baseCount,
-        8,
-        42,
+        14,
+        56,
         140,
         220,
         42,
@@ -62,8 +62,8 @@ export const CloudBackground = () => {
       const farClouds = createCloudLayer(
         'far',
         Math.max(4, Math.floor(baseCount * 0.7)),
-        4,
-        32,
+        8,
+        40,
         100,
         160,
         60,
@@ -84,7 +84,10 @@ export const CloudBackground = () => {
   }, [])
 
   return (
-    <>
+    <div
+      className="fixed inset-0 overflow-hidden pointer-events-none z-0"
+      aria-hidden="true"
+    >
       <div className="absolute inset-0 bg-linear-to-b from-sky-200 via-sky-100 to-white" />
       <div className="absolute inset-x-0 top-0 h-56 bg-linear-to-b from-white/40 to-transparent" />
 
@@ -102,6 +105,6 @@ export const CloudBackground = () => {
           }}
         />
       ))}
-    </>
+    </div>
   )
 }

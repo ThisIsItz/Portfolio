@@ -190,12 +190,13 @@
 
 @utility cloud {
   @apply absolute rounded-full;
-  background: rgba(255, 255, 255, 0.8);
-  filter: blur(1px);
+  background: rgba(255, 255, 255, 0.9);
+  filter: blur(0.8px);
   box-shadow:
-    30px -18px 0 8px rgba(255, 255, 255, 0.8),
-    78px -8px 0 14px rgba(255, 255, 255, 0.75),
-    118px 2px 0 2px rgba(255, 255, 255, 0.72);
+    30px -16px 0 10px rgba(255, 255, 255, 0.86),
+    58px -18px 0 18px rgba(255, 255, 255, 0.9),
+    86px -10px 0 14px rgba(255, 255, 255, 0.86),
+    114px 0 0 6px rgba(255, 255, 255, 0.8);
 }
 
 #root {
