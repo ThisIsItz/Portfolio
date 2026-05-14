@@ -1,5 +1,5 @@
 import { ArrowRight, ExternalLink } from 'lucide-react'
-import { SectionHeading } from '@/components/SectionHeading'
+import { SectionHeading } from '@/components/common/SectionHeading'
 
 interface Project {
   id: number

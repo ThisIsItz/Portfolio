@@ -1,12 +1,12 @@
 import { Globe, Loader2, Mail, Send } from 'lucide-react'
-import { ContactItem } from '@/components/ContactItem'
-import { ContactFormField } from '@/components/ContactFormField'
+import { ContactItem } from '@/components/common/ContactItem'
+import { ContactFormField } from '@/components/common/ContactFormField'
 import { cn } from '@/lib/utils'
 import { useToast } from '@/hooks/use-toast'
 import { useState, type FormEvent } from 'react'
 import emailjs from '@emailjs/browser'
 import { FaGithub, FaLinkedinIn } from 'react-icons/fa'
-import { SectionHeading } from '@/components/SectionHeading'
+import { SectionHeading } from '@/components/common/SectionHeading'
 
 export const ContactSection = () => {
   const { toast } = useToast()

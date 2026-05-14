@@ -1,6 +1,6 @@
 import { cn } from '@/lib/utils'
 import { useState } from 'react'
-import { SectionHeading } from '@/components/SectionHeading'
+import { SectionHeading } from '@/components/common/SectionHeading'
 
 const skillFilters = ['all', 'frontend', 'backend', 'testing', 'tools'] as const
 

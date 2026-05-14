@@ -1,7 +1,7 @@
 import { Briefcase, Code, Download, User } from 'lucide-react'
 import cvPdf from '@/assets/Itziar-Urbieta-CV.pdf'
-import { AboutFeatureCard } from '@/components/AboutFeatureCard'
-import { SectionHeading } from '@/components/SectionHeading'
+import { AboutFeatureCard } from '@/components/common/AboutFeatureCard'
+import { SectionHeading } from '@/components/common/SectionHeading'
 
 export const AboutSection = () => {
   return (
