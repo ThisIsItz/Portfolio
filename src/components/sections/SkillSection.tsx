@@ -19,8 +19,6 @@ const skills: Skills[] = [
   { name: 'JavaScript', category: 'frontend' },
   { name: 'Next.js', category: 'frontend' },
   { name: 'Vue', category: 'frontend' },
-  { name: 'HTML5', category: 'frontend' },
-  { name: 'CSS3', category: 'frontend' },
   { name: 'Tailwind CSS', category: 'frontend' },
   { name: 'Shadcn UI', category: 'frontend' },
   { name: 'Recharts', category: 'frontend' },
@@ -37,8 +35,6 @@ const skills: Skills[] = [
   { name: 'Figma', category: 'tools' },
   { name: 'Git', category: 'tools' },
   { name: 'Docker', category: 'tools' },
-  { name: 'Dev Containers', category: 'tools' },
-  { name: 'Bun', category: 'tools' },
   { name: 'Vite', category: 'tools' }
 ]
 
