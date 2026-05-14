@@ -1,6 +1,6 @@
 import { HeroSection } from '@/components/sections/HeroSection'
+import { AppBackground } from '@/components/common/AppBackground'
 import { Navbar } from '@/components/common/Navbar'
-import { StarBackground } from '@/components/common/StarBackground'
 import { AboutSection } from '@/components/sections/AboutSection'
 import { SkillSection } from '@/components/sections/SkillSection'
 import { ProjectsSection } from '@/components/sections/ProjectsSection'
@@ -10,7 +10,7 @@ import { Footer } from '@/components/common/Footer'
 export const Home = () => {
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
-      <StarBackground />
+      <AppBackground />
       <Navbar />
       <main>
         <HeroSection />
