@@ -16,7 +16,7 @@ const projects: Project[] = [
     id: 1,
     name: 'Shed Suite',
     description:
-      'Description of Shed Suite, a project management tool for software teams.',
+      'Built admin dashboards, internal tools, complex tables, filters, and frontend/backend integrations for a business management platform.',
     image: 'projects/shedsuite.png',
     imageClassName: 'scale-125 group-hover:scale-135 object-center',
     url: 'https://shedsuite.com',
@@ -25,7 +25,8 @@ const projects: Project[] = [
   {
     id: 4,
     name: 'Layer Z',
-    description: 'Description of Layer Z.',
+    description:
+      'Helped build the MVP from 0 to first release, creating dashboard interfaces and no-code overlay configuration tools.',
     image: 'projects/layerz.jpeg',
     url: 'https://layerz.com/',
     tags: ['Vue', 'TypeScript']
@@ -33,7 +34,8 @@ const projects: Project[] = [
   {
     id: 2,
     name: 'Alitu',
-    description: 'Description of Alitu, a podcast editing and production tool.',
+    description:
+      'Built frontend features, improved podcast editing workflows, and collaborated on a major UI overhaul.',
     image: 'projects/alitu.jpg',
     url: 'https://alitu.com',
     tags: ['React', 'TypeScript', 'GraphQL', 'Apollo', 'PostgreSQL']
@@ -42,7 +44,7 @@ const projects: Project[] = [
     id: 3,
     name: 'Clubview',
     description:
-      'Description of Clubview, a social networking platform for clubs and organizations.',
+      'Built features and UI for a financial analytics platform used by football clubs and leagues.',
     image: 'projects/clubview.jpg',
     url: 'https://clubview.io',
     tags: ['React', 'TypeScript', 'Node.js']
