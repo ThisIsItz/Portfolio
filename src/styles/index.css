@@ -83,7 +83,8 @@
 
     --primary: 205 85% 55%;
     --primary-foreground: 210 40% 98%;
-    --glow-alpha: 0.36;
+    --glow-alpha: 0.1;
+    --glow-rgb: 0 0 0;
 
     --border: 214 32% 91%;
   }
@@ -96,7 +97,8 @@
 
     --primary: 250 65% 65%;
     --primary-foreground: 213 31% 91%;
-    --glow-alpha: 0.5;
+    --glow-alpha: 0.4;
+    --glow-rgb: 225 225 225;
 
     --border: 217 33% 20%;
   }
@@ -157,8 +159,8 @@
 @utility text-glow {
   @apply relative;
   text-shadow:
-    0 0 12px hsl(var(--primary) / var(--glow-alpha)),
-    0 0 20px hsl(var(--primary) / calc(var(--glow-alpha) * 0.75));
+    0 0 8px rgb(var(--glow-rgb) / var(--glow-alpha)),
+    0 0 14px rgb(var(--glow-rgb) / calc(var(--glow-alpha) * 0.7));
 }
 
 @utility card-hover {
