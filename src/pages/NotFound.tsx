@@ -33,7 +33,7 @@ export const NotFound = () => {
         <div className="flex justify-center opacity-0 animate-fade-in-delay-3">
           <button
             onClick={() => navigate('/')}
-            className="cosmic-button flex items-center gap-2 px-6 py-3"
+            className="brand-button flex items-center gap-2 px-6 py-3"
           >
             <Home size={18} />
             Back to Home

@@ -25,7 +25,7 @@ export const AboutSection = () => {
               environments.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center">
-              <a href="#contact" className="cosmic-button">
+              <a href="#contact" className="brand-button">
                 Get In Touch
               </a>
               <a

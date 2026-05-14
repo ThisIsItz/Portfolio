@@ -103,7 +103,7 @@ export const ProjectsSection = () => {
 
         <div className="text-center mt-12">
           <a
-            className="cosmic-button w-fit flex items-center mx-auto gap-2"
+            className="brand-button w-fit flex items-center mx-auto gap-2"
             target="_blank"
             href="https://github.com/ThisIsItz"
           >

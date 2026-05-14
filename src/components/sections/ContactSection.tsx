@@ -184,7 +184,7 @@ export const ContactSection = () => {
                 type="submit"
                 disabled={isLoading}
                 className={cn(
-                  'cosmic-button w-full flex items-center justify-center gap-2 transition-all duration-300 disabled:cursor-not-allowed disabled:opacity-70 disabled:shadow-none',
+                  'brand-button w-full flex items-center justify-center gap-2 transition-all duration-300 disabled:cursor-not-allowed disabled:opacity-70 disabled:shadow-none',
                   isLoading && 'scale-[0.99]'
                 )}
               >
