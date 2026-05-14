@@ -177,7 +177,7 @@ export const ContactSection = () => {
                   placeholder="Type your message here..."
                   required
                   disabled={isLoading}
-                  className="w-full px-4 py-3 rounded-full border border-input bg-background focus:outline-hidden focus:ring-2 focus:ring-primary resize-none"
+                  className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-hidden focus:ring-2 focus:ring-primary resize-none"
                 />
               </div>
               <button
