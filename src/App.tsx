@@ -2,10 +2,11 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { Home } from '@/pages/Home'
 import { NotFound } from '@/pages/NotFound'
 import { Toaster } from '@/components/ui/toaster'
+import { ThemeProvider } from '@/contexts/ThemeContext'
 
 export const App = () => {
   return (
-    <>
+    <ThemeProvider>
       <Toaster />
       <BrowserRouter>
         <Routes>
@@ -13,7 +14,7 @@ export const App = () => {
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
-    </>
+    </ThemeProvider>
   )
 }
 
