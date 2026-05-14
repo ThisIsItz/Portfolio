@@ -6,6 +6,10 @@ Personal portfolio built with [Vite](https://vitejs.dev/), [React](https://react
 
 - Primary domain: [https://itziarurbieta.dev](https://itziarurbieta.dev)
 
+## Analytics
+
+- This site uses Umami for anonymous analytics.
+
 ## Tech Stack
 
 - **Vite** - Fast, modern build tool
@@ -106,6 +110,11 @@ To use [https://itziarurbieta.dev](https://itziarurbieta.dev):
 - Do not manually edit files in `dist/`.
 - `dist/` is generated automatically when running `npm run build`.
 - Always edit source files inside `src/`.
+
+## Browser Icon
+
+To add or change the browser icon, place a `favicon.ico` or `favicon.svg` file in `public/`
+and add the corresponding `<link rel="icon" ...>` tag in `index.html`.
 
 ## License
 
