@@ -23,7 +23,7 @@ export const HeroSection = () => {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex flex-col items-center justify-center px-4"
+      className="relative min-h-screen flex flex-col items-center justify-center px-4 pb-24"
     >
       <div className="container max-w-4xl mx-auto text-center z-10">
         <div className="space-y-6">
@@ -49,7 +49,7 @@ export const HeroSection = () => {
         </div>
       </div>
       <div
-        className={`fixed bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center animate-bounce transition-opacity duration-500 pointer-events-none ${visible ? 'opacity-100' : 'opacity-0'}`}
+        className={`absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center animate-bounce transition-opacity duration-500 ${visible ? 'opacity-100' : 'opacity-0'}`}
       >
         <span className="text-small text-muted-foreground mb-2"> Scroll</span>
         <ArrowDown className="size-5 text-primary" />
