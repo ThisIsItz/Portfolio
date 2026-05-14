@@ -3,7 +3,7 @@ import { AppBackground } from '@/components/common/AppBackground'
 import { Navbar } from '@/components/common/Navbar'
 import { AboutSection } from '@/components/sections/AboutSection'
 import { SkillSection } from '@/components/sections/SkillSection'
-import { ProjectsSection } from '@/components/sections/ProjectsSection'
+import { WorkSection } from '@/components/sections/WorkSection'
 import { ContactSection } from '@/components/sections/ContactSection'
 import { Footer } from '@/components/common/Footer'
 
@@ -16,7 +16,7 @@ export const Home = () => {
         <HeroSection />
         <AboutSection />
         <SkillSection />
-        <ProjectsSection />
+        <WorkSection />
         <ContactSection />
       </main>
       <Footer />

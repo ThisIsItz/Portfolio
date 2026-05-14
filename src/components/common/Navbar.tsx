@@ -19,8 +19,8 @@ const navItems: NavItem[] = [
     href: '#skills'
   },
   {
-    name: 'Projects',
-    href: '#projects'
+    name: 'Work',
+    href: '#work'
   },
   {
     name: 'Contact',

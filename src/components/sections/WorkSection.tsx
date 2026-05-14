@@ -41,9 +41,9 @@ const projects: Project[] = [
   }
 ]
 
-export const ProjectsSection = () => {
+export const WorkSection = () => {
   return (
-    <section id="projects" className="py-24 px-4 relative">
+    <section id="work" className="py-24 px-4 relative">
       <div className="container mx-auto max-w-5xl">
         <SectionHeading
           prefix="Featured"

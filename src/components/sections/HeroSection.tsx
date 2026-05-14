@@ -42,7 +42,7 @@ export const HeroSection = () => {
           </p>
 
           <div className="opacity-0 animate-fade-in-delay-4">
-            <a href="#projects" className="brand-button">
+            <a href="#work" className="brand-button">
               View My Work
             </a>
           </div>
