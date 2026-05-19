@@ -27,15 +27,14 @@ const skills: Skills[] = [
   { name: 'GraphQL', category: 'backend' },
   { name: 'REST APIs', category: 'backend' },
   { name: 'PostgreSQL', category: 'backend' },
-  { name: 'OpenSearch', category: 'backend' },
   { name: 'Jest', category: 'testing' },
   { name: 'React Testing Library', category: 'testing' },
   { name: 'Cypress', category: 'testing' },
-  { name: 'Storybook', category: 'tools' },
+  { name: 'Storybook', category: 'frontend' },
   { name: 'Figma', category: 'tools' },
   { name: 'Git', category: 'tools' },
   { name: 'Docker', category: 'tools' },
-  { name: 'Vite', category: 'tools' }
+  { name: 'AWS', category: 'tools' }
 ]
 
 export const SkillSection = () => {
