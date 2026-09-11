@@ -46,7 +46,7 @@ export const AppsSection = () => {
           {apps.map((app, i) => (
             <div
               key={i}
-              className="group bg-card rounded-lg overflow-hidden shadow-xs card-hover"
+              className="group bg-card rounded-lg overflow-hidden shadow-xs card-hover flex flex-col"
             >
               <div className="h-64 overflow-hidden bg-secondary/30">
                 <img
@@ -56,7 +56,7 @@ export const AppsSection = () => {
                 />
               </div>
 
-              <div className="p-6">
+              <div className="p-6 flex flex-col grow">
                 <h3 className="text-xl font-semibold mb-1">{app.name}</h3>
                 <p className="text-muted-foreground text-sm mb-4">
                   {app.description}
@@ -72,7 +72,7 @@ export const AppsSection = () => {
                     </span>
                   ))}
                 </div>
-                <div className="flex justify-end">
+                <div className="flex justify-end mt-auto">
                   <a
                     href={app.url}
                     target="_blank"
