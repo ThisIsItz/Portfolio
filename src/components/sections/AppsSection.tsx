@@ -48,7 +48,7 @@ export const AppsSection = () => {
               key={i}
               className="group bg-card rounded-lg overflow-hidden shadow-xs card-hover flex flex-col"
             >
-              <div className="h-64 overflow-hidden bg-secondary/30">
+              <div className="h-64 overflow-hidden bg-secondary/30 border-b border-border">
                 <img
                   src={app.image}
                   alt={app.name}
