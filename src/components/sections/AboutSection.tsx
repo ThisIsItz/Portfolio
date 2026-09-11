@@ -1,4 +1,4 @@
-import { Briefcase, Code, Download, User } from 'lucide-react'
+import { Download, RefreshCw, Table, Target } from 'lucide-react'
 import cvPdf from '@/assets/Itziar-Urbieta-CV.pdf'
 import { AboutFeatureCard } from '@/components/common/AboutFeatureCard'
 import { SectionHeading } from '@/components/common/SectionHeading'
@@ -44,21 +44,21 @@ export const AboutSection = () => {
           </div>
           <div className="grid grid-cols-1 gap-6">
             <AboutFeatureCard
-              icon={Code}
-              title="Frontend Development"
-              description="Building maintainable, user-facing features across modern SaaS products and internal platforms."
+              icon={Table}
+              title="Complex Data & Dashboards"
+              description="Building data-heavy interfaces: complex tables, filters, and admin workflows for large, real-world datasets."
             />
 
             <AboutFeatureCard
-              icon={Briefcase}
-              title="Dashboards & Internal Tools"
-              description="Experienced with data-heavy interfaces, complex tables, filters, admin workflows, and business tools."
+              icon={RefreshCw}
+              title="Legacy Modernisation"
+              description="Migrating legacy systems to modern architectures, and unifying inconsistent product areas into a single, maintainable experience."
             />
 
             <AboutFeatureCard
-              icon={User}
-              title="Product-Focused UI"
-              description="Turning product requirements and user workflows into clear, practical, and easy-to-use interfaces."
+              icon={Target}
+              title="End-to-End Ownership"
+              description="From sole developer at an early-stage startup to owning product areas end-to-end on a senior team, across sales, inventory, reporting, and payments."
             />
           </div>
         </div>
