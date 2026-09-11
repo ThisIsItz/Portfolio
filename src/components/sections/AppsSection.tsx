@@ -16,7 +16,7 @@ const apps: AppProject[] = [
     description:
       'A simple breathing app designed to help you slow down and reconnect with the present moment.',
     image: 'apps/anchor.png',
-    imageClassName: 'object-[center_70%]',
+    imageClassName: 'object-center',
     url: 'https://play.google.com/store/apps/details?id=dev.itziar.anchor',
     tags: ['React Native', 'TypeScript', 'Expo']
   },
