@@ -216,6 +216,10 @@
   }
 }
 
+@utility animation-delay-2000 {
+  animation-delay: 2s;
+}
+
 @utility text-glow {
   @apply relative transition-[color,text-shadow] duration-700 ease-in-out;
   text-shadow:
