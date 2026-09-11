@@ -97,9 +97,11 @@ export const WorkSection = () => {
                   <a
                     href={project.url}
                     target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`Visit ${project.name} (opens in a new tab)`}
                     className="text-foreground/80 hover:text-primary transition-colors duration-300"
                   >
-                    <ExternalLink size={20} />
+                    <ExternalLink size={20} aria-hidden="true" />
                   </a>
                 </div>
               </div>
@@ -111,9 +113,10 @@ export const WorkSection = () => {
           <a
             className="brand-button w-fit flex items-center mx-auto gap-2"
             target="_blank"
+            rel="noopener noreferrer"
             href="https://github.com/ThisIsItz"
           >
-            Check My Github <ArrowRight size={16} />
+            Check My Github <ArrowRight size={16} aria-hidden="true" />
           </a>
         </div>
       </div>
