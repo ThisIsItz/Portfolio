@@ -83,8 +83,10 @@ export const Navbar = () => {
             <ThemeToggle className="text-foreground" />
             <button
               onClick={() => setIsMenuOpen((prev) => !prev)}
-              className="p-2 text-foreground z-50"
+              className="p-2 text-foreground z-50 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-md"
               aria-label={isMenuOpen ? 'Close Menu' : 'Open Menu'}
+              aria-expanded={isMenuOpen}
+              aria-controls="mobile-menu"
             >
               {isMenuOpen ? (
                 <X className="size-6" />
@@ -97,6 +99,8 @@ export const Navbar = () => {
       </nav>
 
       <div
+        id="mobile-menu"
+        aria-hidden={!isMenuOpen}
         className={cn(
           'fixed inset-0 bg-background/95 backdrop-blur-md z-40 flex flex-col items-center justify-center',
           'transition-all duration-300 md:hidden',
@@ -110,6 +114,7 @@ export const Navbar = () => {
             <a
               key={key}
               href={item.href}
+              tabIndex={isMenuOpen ? 0 : -1}
               onClick={() => setIsMenuOpen(false)}
               className="text-foreground/80 hover:text-primary transition-colors duration-300"
             >
