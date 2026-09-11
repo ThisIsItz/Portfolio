@@ -1,4 +1,5 @@
 import { LucideIcon } from 'lucide-react'
+import { IconBadge } from '@/components/common/IconBadge'
 
 interface ContactItemProps {
   icon: LucideIcon
@@ -8,16 +9,14 @@ interface ContactItemProps {
 }
 
 export const ContactItem = ({
-  icon: Icon,
+  icon,
   label,
   value,
   href
 }: ContactItemProps) => {
   return (
     <div className="flex items-start space-x-4">
-      <div className="p-3 rounded-full bg-primary/10">
-        <Icon className="size-6 text-primary" />
-      </div>
+      <IconBadge icon={icon} />
       <div className="text-left">
         <h4 className="font-medium">{label}</h4>
         {href ? (

@@ -1,4 +1,5 @@
 import { LucideIcon } from 'lucide-react'
+import { IconBadge } from '@/components/common/IconBadge'
 
 interface AboutFeatureCardProps {
   icon: LucideIcon
@@ -7,16 +8,14 @@ interface AboutFeatureCardProps {
 }
 
 export const AboutFeatureCard = ({
-  icon: Icon,
+  icon,
   title,
   description
 }: AboutFeatureCardProps) => {
   return (
     <div className="gradient-border p-6 card-hover">
       <div className="flex items-start gap-4">
-        <div className="p-3 rounded-full bg-primary/10">
-          <Icon className="size-6 text-primary" />
-        </div>
+        <IconBadge icon={icon} />
         <div className="text-left">
           <h4 className="font-semibold text-lg">{title}</h4>
           <p className="text-muted-foreground">{description}</p>

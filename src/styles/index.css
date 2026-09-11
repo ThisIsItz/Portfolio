@@ -220,6 +220,10 @@
   animation-delay: 2s;
 }
 
+@utility focus-ring {
+  @apply focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2;
+}
+
 @utility text-glow {
   @apply relative transition-[color,text-shadow] duration-700 ease-in-out;
   text-shadow:

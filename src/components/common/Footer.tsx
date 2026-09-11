@@ -10,7 +10,7 @@ export const Footer = () => {
       <a
         href="#hero"
         aria-label="Back to top"
-        className="p-2 rounded-full bg-primary/10 hover:bg-primary/20 text-primary transition-colors focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+        className="p-2 rounded-full bg-primary/10 hover:bg-primary/20 text-primary transition-colors focus-ring"
       >
         <ArrowUp aria-hidden="true" />
       </a>

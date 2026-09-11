@@ -87,7 +87,7 @@ export const Navbar = () => {
             <ThemeToggle className="text-foreground" />
             <button
               onClick={() => setIsMenuOpen((prev) => !prev)}
-              className="p-2 text-foreground z-50 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-md"
+              className="p-2 text-foreground z-50 focus-ring rounded-md"
               aria-label={isMenuOpen ? 'Close Menu' : 'Open Menu'}
               aria-expanded={isMenuOpen}
               aria-controls="mobile-menu"
