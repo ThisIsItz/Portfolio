@@ -4,6 +4,7 @@ import { Navbar } from '@/components/common/Navbar'
 import { AboutSection } from '@/components/sections/AboutSection'
 import { SkillSection } from '@/components/sections/SkillSection'
 import { WorkSection } from '@/components/sections/WorkSection'
+import { AppsSection } from '@/components/sections/AppsSection'
 import { ContactSection } from '@/components/sections/ContactSection'
 import { Footer } from '@/components/common/Footer'
 
@@ -23,6 +24,7 @@ export const Home = () => {
         <AboutSection />
         <SkillSection />
         <WorkSection />
+        <AppsSection />
         <ContactSection />
       </main>
       <Footer />
