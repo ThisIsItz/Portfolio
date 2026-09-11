@@ -25,7 +25,7 @@ const apps: AppProject[] = [
     description:
       'A shift-tracking app for care work: clock in and out with one tap, review your full history, and share it with a family group.',
     image: 'apps/fichapp.png',
-    imageClassName: 'object-top',
+    imageClassName: 'object-center',
     url: 'https://play.google.com/store/apps/details?id=dev.itziar.fichapp',
     tags: ['React Native', 'TypeScript', 'Expo', 'Supabase']
   }
