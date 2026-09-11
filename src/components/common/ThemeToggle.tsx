@@ -35,7 +35,7 @@ export const ThemeToggle = ({ className }: ThemeToggleProps) => {
       aria-label={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
       onClick={handleToggle}
       className={cn(
-        'group relative isolate rounded-full p-2 transition-all duration-300 focus:outline-hidden',
+        'group relative isolate rounded-full p-2 transition-all duration-300 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2',
         showAttractor &&
           'motion-safe:animate-[theme-nudge_2.8s_ease-in-out_infinite] motion-reduce:animate-none',
         className
