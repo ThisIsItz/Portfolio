@@ -55,6 +55,7 @@ export const SkillSection = () => {
             <button
               key={category}
               onClick={() => setActiveCategory(category)}
+              aria-pressed={activeCategory === category}
               className={cn(
                 'px-5 py-2 rounded-full transition-colors duration-300. capitalize',
                 activeCategory === category
