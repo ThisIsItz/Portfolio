@@ -8,6 +8,18 @@
   --color-primary: hsl(var(--primary));
   --color-primary-foreground: hsl(var(--primary-foreground));
 
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+
   --color-card: hsl(var(--card));
   --animate-float: float 6s ease-in-out infinite;
   --animate-pulse-subtle: pulse-subtle 4s ease-in-out infinite;
@@ -104,6 +116,18 @@
     --glow-rgb: 0 0 0;
 
     --border: 214 32% 91%;
+
+    --secondary: 210 40% 94%;
+    --secondary-foreground: 222 47% 11%;
+
+    --muted: 210 40% 94%;
+    --muted-foreground: 215 16% 45%;
+
+    --destructive: 0 84% 45%;
+    --destructive-foreground: 210 40% 98%;
+
+    --input: 214 32% 91%;
+    --ring: 205 85% 55%;
   }
 
   .dark {
@@ -118,6 +142,18 @@
     --glow-rgb: 225 225 225;
 
     --border: 217 33% 20%;
+
+    --secondary: 217 33% 20%;
+    --secondary-foreground: 213 31% 91%;
+
+    --muted: 217 33% 20%;
+    --muted-foreground: 215 20% 65%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 213 31% 91%;
+
+    --input: 217 33% 20%;
+    --ring: 250 65% 65%;
   }
 
   * {
