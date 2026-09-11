@@ -34,6 +34,12 @@ export default [
         'warn',
         { allowConstantExport: true }
       ],
+      // Base JS rules don't understand TS-only constructs (ambient type
+      // namespaces, parameter names in type signatures) and produce false
+      // positives; @typescript-eslint/no-unused-vars and tsc itself already
+      // cover these cases correctly.
+      'no-unused-vars': 'off',
+      'no-undef': 'off',
       '@typescript-eslint/no-unused-vars': ['warn', { argsIgnorePattern: '^_' }]
     }
   }
