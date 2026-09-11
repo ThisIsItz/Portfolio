@@ -60,7 +60,7 @@ export const SkillSection = () => {
                 'px-5 py-2 rounded-full transition-colors duration-300. capitalize',
                 activeCategory === category
                   ? 'bg-primary text-primary-foreground'
-                  : 'bg-secondary/70 text-foreground hover:bg-secondary'
+                  : 'bg-secondary/90 text-foreground border border-border shadow-xs hover:bg-secondary'
               )}
             >
               {category}

@@ -106,10 +106,10 @@
 
     --border: 214 32% 91%;
 
-    --secondary: 210 40% 94%;
+    --secondary: 0 0% 100%;
     --secondary-foreground: 222 47% 11%;
 
-    --muted: 210 40% 94%;
+    --muted: 0 0% 100%;
     --muted-foreground: 215 16% 45%;
 
     --destructive: 0 84% 45%;
@@ -123,7 +123,7 @@
     --background: 222 47% 4%;
     --foreground: 213 31% 91%;
 
-    --card: 222 47% 8%;
+    --card: 222 47% 11%;
 
     --primary: 250 65% 65%;
     --primary-foreground: 222 47% 4%;
