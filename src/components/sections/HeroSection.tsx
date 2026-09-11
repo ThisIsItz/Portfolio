@@ -49,7 +49,7 @@ export const HeroSection = () => {
         </div>
       </div>
       <div
-        className={`absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center animate-bounce transition-opacity duration-500 ${visible ? 'opacity-100' : 'opacity-0'}`}
+        className={`absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center animate-bounce motion-reduce:animate-none transition-opacity duration-500 ${visible ? 'opacity-100' : 'opacity-0'}`}
       >
         <span className="text-small text-muted-foreground mb-2"> Scroll</span>
         <ArrowDown className="size-5 text-primary" />

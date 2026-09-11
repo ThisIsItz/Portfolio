@@ -10,10 +10,10 @@ export const NotFound = () => {
     <div className="min-h-screen bg-background text-foreground flex items-center justify-center px-4 relative overflow-hidden">
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div
-          className={`absolute top-20 right-10 w-72 h-72 rounded-full blur-3xl animate-pulse ${isDark ? 'bg-primary/20' : 'bg-primary/10'}`}
+          className={`absolute top-20 right-10 w-72 h-72 rounded-full blur-3xl animate-pulse motion-reduce:animate-none ${isDark ? 'bg-primary/20' : 'bg-primary/10'}`}
         />
         <div
-          className={`absolute bottom-20 left-10 w-72 h-72 rounded-full blur-3xl animate-pulse animation-delay-2000 ${isDark ? 'bg-primary/15' : 'bg-primary/5'}`}
+          className={`absolute bottom-20 left-10 w-72 h-72 rounded-full blur-3xl animate-pulse motion-reduce:animate-none animation-delay-2000 ${isDark ? 'bg-primary/15' : 'bg-primary/5'}`}
         />
       </div>
 

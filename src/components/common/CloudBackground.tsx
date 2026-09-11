@@ -123,7 +123,7 @@ export const CloudBackground = () => {
       {clouds.map((cloud) => (
         <div
           key={cloud.id}
-          className="cloud animate-cloud-drift"
+          className="cloud animate-cloud-drift motion-reduce:animate-none"
           style={{
             width: `${cloud.size}px`,
             height: `${cloud.size * 0.4}px`,
