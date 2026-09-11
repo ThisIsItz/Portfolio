@@ -11,18 +11,22 @@ export const AboutSection = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
             <h3 className="text-2xl font-semibold">
-              Passionate Frontend Developer and problem solver
+              Senior Frontend Engineer focused on real impact
             </h3>
             <p className="text-muted-foreground">
-              I'm a Frontend Engineer with 7+ years of experience building SaaS
-              products, admin dashboards, and internal tools while working with
-              remote teams.
+              I'm a Frontend Engineer with 7+ years of experience shipping
+              React and TypeScript products for growing SaaS companies, from a
+              platform behind $1.7B in sales to dashboards used by every club
+              in the English Football League.
             </p>
 
             <p className="text-muted-foreground">
-              I enjoy solving complex UI problems, improving user workflows, and
-              building maintainable frontend applications in fast-moving product
-              environments.
+              I originally trained in veterinary medicine before moving into
+              software, and that background still shows in how I work:
+              careful, detail oriented, and comfortable owning a problem from
+              requirements through to release. These days I build faster with
+              AI coding tools like Claude Code and GitHub Copilot, while
+              keeping ownership of the decisions that actually matter.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center">
               <a href="#contact" className="brand-button">
