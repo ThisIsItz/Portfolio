@@ -16,7 +16,7 @@ const apps: AppProject[] = [
     description:
       'A simple breathing app designed to help you slow down and reconnect with the present moment.',
     image: 'apps/anchor.png',
-    imageClassName: 'object-center',
+    imageClassName: 'object-[center_70%]',
     url: 'https://play.google.com/store/apps/details?id=dev.itziar.anchor',
     tags: ['React Native', 'TypeScript', 'Expo']
   },
@@ -25,7 +25,7 @@ const apps: AppProject[] = [
     description:
       'A shift-tracking app for care work: clock in and out with one tap, review your full history, and share it with a family group.',
     image: 'apps/fichapp.png',
-    imageClassName: 'object-top',
+    imageClassName: 'object-center',
     url: 'https://play.google.com/store/apps/details?id=dev.itziar.fichapp',
     tags: ['React Native', 'TypeScript', 'Expo', 'Supabase']
   }
