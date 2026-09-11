@@ -32,9 +32,7 @@ export const HeroSection = () => {
             <span className="text-primary opacity-0 animate-fade-in-delay-1">
               Itziar
             </span>{' '}
-            <span className="text-gradient opacity-0 animate-fade-in-delay-2">
-              Urbieta
-            </span>
+            <span className="opacity-0 animate-fade-in-delay-2">Urbieta</span>
           </h1>
           <p className="text-lg md:text-xl text-muted-foreground max-2-2xl mx-auto opacity-0 animate-fade-in-delay-3">
             Frontend Engineer building clean, scalable interfaces for complex
