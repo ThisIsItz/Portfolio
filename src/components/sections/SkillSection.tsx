@@ -4,8 +4,8 @@ import { SectionHeading } from '@/components/common/SectionHeading'
 
 const skillFilters = ['all', 'frontend', 'backend', 'testing', 'tools'] as const
 
-export type SkillFilter = (typeof skillFilters)[number]
-export type SkillCategory = Exclude<SkillFilter, 'all'>
+type SkillFilter = (typeof skillFilters)[number]
+type SkillCategory = Exclude<SkillFilter, 'all'>
 
 interface Skills {
   name: string

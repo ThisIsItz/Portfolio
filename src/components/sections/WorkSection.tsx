@@ -2,7 +2,6 @@ import { ArrowRight, ExternalLink } from 'lucide-react'
 import { SectionHeading } from '@/components/common/SectionHeading'
 
 interface Project {
-  id: number
   name: string
   description: string
   image: string
@@ -13,7 +12,6 @@ interface Project {
 
 const projects: Project[] = [
   {
-    id: 1,
     name: 'Shed Suite',
     description:
       'Built admin dashboards, internal tools, complex tables, filters, and frontend/backend integrations for a business management platform.',
@@ -23,7 +21,6 @@ const projects: Project[] = [
     tags: ['React', 'TypeScript', 'GraphQL', 'Go', 'PostgreSQL']
   },
   {
-    id: 4,
     name: 'Layer Z',
     description:
       'Helped build the MVP from 0 to first release, creating dashboard interfaces and no-code overlay configuration tools.',
@@ -32,7 +29,6 @@ const projects: Project[] = [
     tags: ['Vue', 'TypeScript']
   },
   {
-    id: 2,
     name: 'Alitu',
     description:
       'Built frontend features, improved podcast editing workflows, and collaborated on a major UI overhaul.',
@@ -41,7 +37,6 @@ const projects: Project[] = [
     tags: ['React', 'TypeScript', 'GraphQL', 'Apollo', 'PostgreSQL']
   },
   {
-    id: 3,
     name: 'Clubview',
     description:
       'Built features and UI for a financial analytics platform used by football clubs and leagues.',
