@@ -21,7 +21,9 @@ const skills: Skills[] = [
   { name: 'Vue', category: 'frontend' },
   { name: 'Tailwind CSS', category: 'frontend' },
   { name: 'Shadcn UI', category: 'frontend' },
-  { name: 'Recharts', category: 'frontend' },
+  { name: 'React Native', category: 'frontend' },
+  { name: 'Zustand', category: 'frontend' },
+  { name: 'Redux', category: 'frontend' },
   { name: 'Go', category: 'backend' },
   { name: 'Node.js', category: 'backend' },
   { name: 'GraphQL', category: 'backend' },
@@ -34,7 +36,9 @@ const skills: Skills[] = [
   { name: 'Figma', category: 'tools' },
   { name: 'Git', category: 'tools' },
   { name: 'Docker', category: 'tools' },
-  { name: 'AWS', category: 'tools' }
+  { name: 'AWS', category: 'tools' },
+  { name: 'Claude', category: 'tools' },
+  { name: 'GitHub Copilot', category: 'tools' }
 ]
 
 export const SkillSection = () => {
