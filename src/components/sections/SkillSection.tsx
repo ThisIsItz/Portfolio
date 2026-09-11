@@ -41,7 +41,8 @@ const skills: Skills[] = [
   { name: 'Docker', category: 'tools' },
   { name: 'AWS', category: 'tools' },
   { name: 'Claude', category: 'tools' },
-  { name: 'GitHub Copilot', category: 'tools' }
+  { name: 'GitHub Copilot', category: 'tools' },
+  { name: 'Codex', category: 'tools' }
 ]
 
 export const SkillSection = () => {
