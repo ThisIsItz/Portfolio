@@ -1,5 +1,5 @@
-import { ExternalLink } from 'lucide-react'
 import { SectionHeading } from '@/components/common/SectionHeading'
+import { ProjectCard } from '@/components/common/ProjectCard'
 
 interface AppProject {
   name: string
@@ -44,47 +44,17 @@ export const AppsSection = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {apps.map((app, i) => (
-            <div
+            <ProjectCard
               key={i}
-              className="group bg-card rounded-lg overflow-hidden shadow-xs card-hover flex flex-col"
-            >
-              <div className="h-64 overflow-hidden bg-secondary/30 border-b border-border">
-                <img
-                  src={app.image}
-                  alt={app.name}
-                  className={`w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 ${app.imageClassName ?? ''}`}
-                />
-              </div>
-
-              <div className="p-6 flex flex-col grow">
-                <h3 className="text-xl font-semibold mb-1">{app.name}</h3>
-                <p className="text-muted-foreground text-sm mb-4">
-                  {app.description}
-                </p>
-
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {app.tags.map((tag, i) => (
-                    <span
-                      key={i}
-                      className="px-2 py-1 text-xs font-medium rounded-full bg-secondary text-secondary-foreground"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-                <div className="flex justify-end mt-auto">
-                  <a
-                    href={app.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={`View ${app.name} on Google Play (opens in a new tab)`}
-                    className="text-foreground/80 hover:text-primary transition-colors duration-300"
-                  >
-                    <ExternalLink size={20} aria-hidden="true" />
-                  </a>
-                </div>
-              </div>
-            </div>
+              name={app.name}
+              description={app.description}
+              image={app.image}
+              imageClassName={app.imageClassName}
+              imageHeightClassName="h-64"
+              url={app.url}
+              linkAriaLabel={`View ${app.name} on Google Play (opens in a new tab)`}
+              tags={app.tags}
+            />
           ))}
         </div>
       </div>
