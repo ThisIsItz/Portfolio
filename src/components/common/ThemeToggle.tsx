@@ -1,7 +1,7 @@
 import { Moon, Sun } from 'lucide-react'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { cn } from '@/lib/utils'
-import { useTheme } from '@/contexts/ThemeContext'
+import { useTheme } from '@/hooks/use-theme'
 
 interface ThemeToggleProps {
   className?: string
@@ -9,15 +9,13 @@ interface ThemeToggleProps {
 
 export const ThemeToggle = ({ className }: ThemeToggleProps) => {
   const { isDark, toggleTheme } = useTheme()
-  const [showAttractor, setShowAttractor] = useState(false)
-
-  useEffect(() => {
+  const [showAttractor, setShowAttractor] = useState(() => {
     if (typeof window === 'undefined') {
-      return
+      return false
     }
 
-    setShowAttractor(localStorage.getItem('theme-toggle-engaged') !== 'true')
-  }, [])
+    return localStorage.getItem('theme-toggle-engaged') !== 'true'
+  })
 
   const handleToggle = () => {
     toggleTheme()

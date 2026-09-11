@@ -1,6 +1,6 @@
 import { CloudBackground } from '@/components/common/CloudBackground'
 import { StarBackground } from '@/components/common/StarBackground'
-import { useTheme } from '@/contexts/ThemeContext'
+import { useTheme } from '@/hooks/use-theme'
 
 export const AppBackground = () => {
   const { isDark } = useTheme()
