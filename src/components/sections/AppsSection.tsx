@@ -5,6 +5,7 @@ interface AppProject {
   name: string
   description: string
   image: string
+  imageClassName?: string
   url: string
   tags: string[]
 }
@@ -15,6 +16,7 @@ const apps: AppProject[] = [
     description:
       'A simple breathing app designed to help you slow down and reconnect with the present moment.',
     image: 'apps/anchor.png',
+    imageClassName: 'object-center',
     url: 'https://play.google.com/store/apps/details?id=dev.itziar.anchor',
     tags: ['React Native', 'TypeScript', 'Expo']
   },
@@ -23,6 +25,7 @@ const apps: AppProject[] = [
     description:
       'A shift-tracking app for care work: clock in and out with one tap, review your full history, and share it with a family group.',
     image: 'apps/fichapp.png',
+    imageClassName: 'object-top',
     url: 'https://play.google.com/store/apps/details?id=dev.itziar.fichapp',
     tags: ['React Native', 'TypeScript', 'Expo', 'Supabase']
   }
@@ -49,7 +52,7 @@ export const AppsSection = () => {
                 <img
                   src={app.image}
                   alt={app.name}
-                  className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-110"
+                  className={`w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 ${app.imageClassName ?? ''}`}
                 />
               </div>
 
