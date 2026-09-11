@@ -6,9 +6,14 @@ Personal portfolio built with [Vite](https://vitejs.dev/), [React](https://react
 
 - Primary domain: [https://itziarurbieta.dev](https://itziarurbieta.dev)
 
-## Analytics
+## Features
 
-- This site uses Umami for anonymous analytics.
+- Hero, About, Skills, Work, and Contact sections in a single-page layout
+- Filterable skills grid (frontend / backend / testing / tools)
+- Light/dark theme toggle with persisted preference
+- Animated star/cloud backgrounds that adapt to the active theme
+- Contact form wired to [EmailJS](https://www.emailjs.com/) with toast notifications for success/error states
+- Anonymous analytics via Umami
 
 ## Tech Stack
 
@@ -17,6 +22,11 @@ Personal portfolio built with [Vite](https://vitejs.dev/), [React](https://react
 - **TypeScript** - Static typing for safer development
 - **Tailwind CSS** - Utility-first CSS framework
 - **Vercel** - Hosting and deployment
+
+## Requirements
+
+- Node.js 20.19+ or 22.13+ (see `npm install` output for the exact engine ranges required by dev dependencies)
+- npm 10+
 
 ## Installation
 
@@ -50,6 +60,22 @@ Previews the production build locally.
 npm run preview
 ```
 
+### `npm run lint`
+
+Runs ESLint across the project.
+
+```bash
+npm run lint
+```
+
+### `npm run deploy`
+
+Builds the app and publishes `dist` to GitHub Pages via [`gh-pages`](https://www.npmjs.com/package/gh-pages). Used as a secondary mirror — the primary deployment is Vercel (see [Deployment](#deployment-vercel)).
+
+```bash
+npm run deploy
+```
+
 ## Environment Variables
 
 Create a `.env` file with:
@@ -59,6 +85,8 @@ VITE_EMAILJS_SERVICE_ID=your_service_id
 VITE_EMAILJS_TEMPLATE_ID=your_template_id
 VITE_EMAILJS_PUBLIC_KEY=your_public_key
 ```
+
+These are required for the contact form: without them, EmailJS submissions fail and the form shows an error toast.
 
 In Vercel, add the same variables in:
 
@@ -104,17 +132,6 @@ To use [https://itziarurbieta.dev](https://itziarurbieta.dev):
 2. Add `itziarurbieta.dev`.
 3. Add `www.itziarurbieta.dev` (optional, recommended).
 4. Configure DNS records at your domain provider following Vercel instructions.
-
-## Notes
-
-- Do not manually edit files in `dist/`.
-- `dist/` is generated automatically when running `npm run build`.
-- Always edit source files inside `src/`.
-
-## Browser Icon
-
-To add or change the browser icon, place a `favicon.ico` or `favicon.svg` file in `public/`
-and add the corresponding `<link rel="icon" ...>` tag in `index.html`.
 
 ## License
 
