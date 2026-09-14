@@ -1,4 +1,3 @@
-import { ArrowRight } from 'lucide-react'
 import { SectionHeading } from '@/components/common/SectionHeading'
 import { ProjectCard } from '@/components/common/ProjectCard'
 
@@ -49,7 +48,7 @@ const projects: Project[] = [
 
 export const WorkSection = () => {
   return (
-    <section id="work" className="py-24 px-4 relative">
+    <section id="work" className="pt-24 pb-12 px-4 relative">
       <div className="container mx-auto max-w-5xl">
         <SectionHeading prefix="Selected" highlight="Work" className="mb-4" />
 
@@ -72,17 +71,6 @@ export const WorkSection = () => {
               tags={project.tags}
             />
           ))}
-        </div>
-
-        <div className="text-center mt-12">
-          <a
-            className="brand-button w-fit flex items-center mx-auto gap-2"
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://github.com/ThisIsItz"
-          >
-            Check My Github <ArrowRight size={16} aria-hidden="true" />
-          </a>
         </div>
       </div>
     </section>
