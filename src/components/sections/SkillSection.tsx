@@ -33,6 +33,7 @@ const skills: Skills[] = [
   { name: 'REST APIs', category: 'backend' },
   { name: 'PostgreSQL', category: 'backend' },
   { name: 'Jest', category: 'testing' },
+  { name: 'Vitest', category: 'testing' },
   { name: 'React Testing Library', category: 'testing' },
   { name: 'Cypress', category: 'testing' },
   { name: 'Storybook', category: 'frontend' },
