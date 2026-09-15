@@ -8,7 +8,9 @@
     "build": "vite build",
     "preview": "vite preview",
     "deploy": "npm run build && gh-pages -d dist",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "test": "vitest run",
+    "test:watch": "vitest"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
@@ -25,6 +27,9 @@
   "devDependencies": {
     "@eslint/js": "^9.39.4",
     "@tailwindcss/vite": "^4.3.0",
+    "@testing-library/jest-dom": "^7.0.1",
+    "@testing-library/react": "^16.3.3",
+    "@testing-library/user-event": "^14.6.7",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "@typescript-eslint/eslint-plugin": "^8.59.3",
@@ -35,8 +40,10 @@
     "eslint-plugin-react-refresh": "^0.5.2",
     "gh-pages": "^6.1.1",
     "globals": "^17.6.0",
+    "jsdom": "^25.0.1",
     "tailwindcss": "^4.3.0",
     "typescript": "^5.6.3",
-    "vite": "^5.1.4"
+    "vite": "^5.1.4",
+    "vitest": "^3.2.7"
   }
 }
