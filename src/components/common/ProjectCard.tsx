@@ -37,6 +37,8 @@ export const ProjectCard = ({
         <img
           src={image}
           alt={name}
+          loading="lazy"
+          decoding="async"
           className={`w-full h-full transition-transform duration-500 ${imageFramed ? 'object-contain' : 'object-cover'} ${hoverScale} ${imageClassName ?? ''}`}
         />
       </div>
