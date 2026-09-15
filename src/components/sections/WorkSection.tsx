@@ -18,7 +18,7 @@ const projects: Project[] = [
     image: 'projects/shedsuite.png',
     imageClassName: 'scale-125 group-hover:scale-135 object-center',
     url: 'https://shedsuite.com',
-    tags: ['React', 'TypeScript', 'GraphQL', 'Go', 'PostgreSQL']
+    tags: ['React', 'TypeScript', 'TanStack Query', 'Go', 'PostgreSQL']
   },
   {
     name: 'Layer Z',
