@@ -6,6 +6,8 @@ interface ProjectCardProps {
   image: string
   imageClassName?: string
   imageHeightClassName?: string
+  imageFramed?: boolean
+  imageHoverScaleClassName?: string
   url: string
   linkAriaLabel: string
   tags: string[]
@@ -17,19 +19,25 @@ export const ProjectCard = ({
   image,
   imageClassName,
   imageHeightClassName = 'h-48',
+  imageFramed = false,
+  imageHoverScaleClassName,
   url,
   linkAriaLabel,
   tags
 }: ProjectCardProps) => {
+  const hoverScale =
+    imageHoverScaleClassName ??
+    (imageFramed ? 'group-hover:scale-105' : 'group-hover:scale-110')
+
   return (
     <div className="group bg-card rounded-lg overflow-hidden shadow-xs card-hover flex flex-col">
       <div
-        className={`${imageHeightClassName} overflow-hidden bg-secondary/30 border-b border-border`}
+        className={`${imageHeightClassName} overflow-hidden border-b border-border ${imageFramed ? 'bg-white p-4' : 'bg-secondary/30'}`}
       >
         <img
           src={image}
           alt={name}
-          className={`w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 ${imageClassName ?? ''}`}
+          className={`w-full h-full transition-transform duration-500 ${imageFramed ? 'object-contain' : 'object-cover'} ${hoverScale} ${imageClassName ?? ''}`}
         />
       </div>
 

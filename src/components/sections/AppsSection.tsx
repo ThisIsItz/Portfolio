@@ -7,6 +7,8 @@ interface AppProject {
   description: string
   image: string
   imageClassName?: string
+  imageFramed?: boolean
+  imageHoverScaleClassName?: string
   url: string
   tags: string[]
 }
@@ -17,7 +19,7 @@ const apps: AppProject[] = [
     description:
       'A simple breathing app designed to help you slow down and reconnect with the present moment.',
     image: 'apps/anchor.png',
-    imageClassName: 'object-center',
+    imageFramed: true,
     url: 'https://play.google.com/store/apps/details?id=dev.itziar.anchor',
     tags: ['React Native', 'TypeScript', 'Expo']
   },
@@ -27,6 +29,7 @@ const apps: AppProject[] = [
       'A shift-tracking app for care work: clock in and out with one tap, review your full history, and share it with a family group.',
     image: 'apps/fichapp.png',
     imageClassName: 'object-center',
+    imageHoverScaleClassName: 'group-hover:scale-105',
     url: 'https://play.google.com/store/apps/details?id=dev.itziar.fichapp',
     tags: ['React Native', 'TypeScript', 'Expo', 'Supabase']
   }
@@ -52,6 +55,8 @@ export const AppsSection = () => {
               image={app.image}
               imageClassName={app.imageClassName}
               imageHeightClassName="h-64"
+              imageFramed={app.imageFramed}
+              imageHoverScaleClassName={app.imageHoverScaleClassName}
               url={app.url}
               linkAriaLabel={`View ${app.name} on Google Play (opens in a new tab)`}
               tags={app.tags}
