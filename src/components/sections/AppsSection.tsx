@@ -10,10 +10,21 @@ interface AppProject {
   imageFramed?: boolean
   imageHoverScaleClassName?: string
   url: string
+  isInternalLink?: boolean
   tags: string[]
 }
 
 const apps: AppProject[] = [
+  {
+    name: 'TBR',
+    description:
+      'A to-be-read list for book lovers: search, scan or snap a cover to add books, filter your pile, and spin to pick your next read.',
+    image: 'apps/tbr.png',
+    imageFramed: true,
+    url: '/tbr',
+    isInternalLink: true,
+    tags: ['React Native', 'TypeScript', 'Expo', 'SQLite']
+  },
   {
     name: 'Anchor: Breathe',
     description:
@@ -58,7 +69,12 @@ export const AppsSection = () => {
               imageFramed={app.imageFramed}
               imageHoverScaleClassName={app.imageHoverScaleClassName}
               url={app.url}
-              linkAriaLabel={`View ${app.name} on Google Play (opens in a new tab)`}
+              isInternalLink={app.isInternalLink}
+              linkAriaLabel={
+                app.isInternalLink
+                  ? `Learn more about ${app.name}`
+                  : `View ${app.name} on Google Play (opens in a new tab)`
+              }
               tags={app.tags}
             />
           ))}
