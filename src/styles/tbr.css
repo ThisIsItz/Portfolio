@@ -24,3 +24,10 @@
 .tbr-display {
   font-family: 'Fraunces', Georgia, 'Times New Roman', serif;
 }
+
+/* Wide screens left the landing looking small; scale it like a 125% zoom there only. */
+@media (min-width: 1280px) {
+  html:has(.tbr-page) {
+    font-size: 125%;
+  }
+}
