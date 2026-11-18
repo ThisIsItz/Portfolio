@@ -1,4 +1,5 @@
-import { ExternalLink } from 'lucide-react'
+import { ArrowRight, ExternalLink } from 'lucide-react'
+import { Link } from 'react-router-dom'
 
 interface ProjectCardProps {
   name: string
@@ -9,9 +10,13 @@ interface ProjectCardProps {
   imageFramed?: boolean
   imageHoverScaleClassName?: string
   url: string
+  isInternalLink?: boolean
   linkAriaLabel: string
   tags: string[]
 }
+
+const linkClassName =
+  'text-foreground/80 hover:text-primary transition-colors duration-300'
 
 export const ProjectCard = ({
   name,
@@ -22,6 +27,7 @@ export const ProjectCard = ({
   imageFramed = false,
   imageHoverScaleClassName,
   url,
+  isInternalLink = false,
   linkAriaLabel,
   tags
 }: ProjectCardProps) => {
@@ -58,15 +64,25 @@ export const ProjectCard = ({
           ))}
         </div>
         <div className="flex justify-end mt-auto">
-          <a
-            href={url}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label={linkAriaLabel}
-            className="text-foreground/80 hover:text-primary transition-colors duration-300"
-          >
-            <ExternalLink size={20} aria-hidden="true" />
-          </a>
+          {isInternalLink ? (
+            <Link
+              to={url}
+              aria-label={linkAriaLabel}
+              className={linkClassName}
+            >
+              <ArrowRight size={20} aria-hidden="true" />
+            </Link>
+          ) : (
+            <a
+              href={url}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={linkAriaLabel}
+              className={linkClassName}
+            >
+              <ExternalLink size={20} aria-hidden="true" />
+            </a>
+          )}
         </div>
       </div>
     </div>

@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import { render, screen } from '@testing-library/react'
+import { MemoryRouter } from 'react-router-dom'
 import { ProjectCard } from '@/components/common/ProjectCard'
 
 const baseProps = {
@@ -58,5 +59,22 @@ describe('ProjectCard', () => {
 
     expect(screen.getByText('React Native')).toBeInTheDocument()
     expect(screen.getByText('TypeScript')).toBeInTheDocument()
+  })
+
+  it('renders an in-app link without opening a new tab when internal', () => {
+    render(
+      <MemoryRouter>
+        <ProjectCard
+          {...baseProps}
+          url="/tbr"
+          isInternalLink
+          linkAriaLabel="Learn more about TBR"
+        />
+      </MemoryRouter>
+    )
+
+    const link = screen.getByRole('link', { name: 'Learn more about TBR' })
+    expect(link).toHaveAttribute('href', '/tbr')
+    expect(link).not.toHaveAttribute('target')
   })
 })
