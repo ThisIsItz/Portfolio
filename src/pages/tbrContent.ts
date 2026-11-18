@@ -103,7 +103,7 @@ export const TBR_CONTENT: Record<TbrLocale, TbrContent> = {
         icon: Search,
         title: 'Find any book',
         description:
-          'Type a title or an author and add it to your list in one tap.'
+          'Type a title or an author and add it to your list instantly.'
       },
       {
         icon: ScanBarcode,
@@ -113,27 +113,27 @@ export const TBR_CONTENT: Record<TbrLocale, TbrContent> = {
       },
       {
         icon: PencilLine,
-        title: 'Add it your way',
+        title: 'Add it by hand',
         description:
-          "Can't find it? Add it by hand, with your own cover photo, genres and notes."
+          "Can't find it? Enter the details yourself, with your own cover photo, genres and notes."
       },
       {
         icon: SlidersHorizontal,
         title: 'Find the right book',
         description:
-          'Filter by genre, author, language or length, and view your list as cards, a list or a grid.'
+          'Filter by any mix of genre, author, language and length, and choose how to see your list: cards, list or grid.'
       },
       {
         icon: ShoppingCart,
-        title: 'Buy it in a tap',
+        title: 'Store links',
         description:
-          'Ready to read it? Open it in your favorite bookshop, picked for your country.'
+          'Ready to read it? Find it at your favorite online store without searching for it.'
       },
       {
         icon: Ban,
         title: 'No ads, no account',
         description:
-          'Nothing gets in the way of your list. No sign-up, and your books stay on your phone.'
+          'No ads interrupting you and no sign-up. Your books stay on your phone.'
       }
     ],
     pricingTitle: 'Free, with an optional Pro',
@@ -164,7 +164,7 @@ export const TBR_CONTENT: Record<TbrLocale, TbrContent> = {
         icon: Dices,
         title: 'Book Picker',
         description:
-          "Can't decide what to read next? Spin through your list, with filters if you like, and let chance choose."
+          "Can't decide what to read next? Spin the wheel with the books on your list, with filters if you like, and let chance choose."
       },
       {
         icon: Palette,
