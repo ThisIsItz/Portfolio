@@ -24,8 +24,9 @@ const apps: AppProject[] = [
     name: 'TBR',
     description:
       'A to-be-read list for book lovers: search, scan or snap a cover to add books, filter your pile, and spin to pick your next read.',
-    image: 'apps/tbr.png',
-    imageFramed: true,
+    image: 'apps/tbr.jpg',
+    imageClassName: 'object-center',
+    imageHoverScaleClassName: 'group-hover:scale-105',
     playStoreUrl: 'https://play.google.com/store/apps/details?id=dev.itziar.tbr',
     websiteUrl: '/tbr',
     badge: '500+ downloads',
