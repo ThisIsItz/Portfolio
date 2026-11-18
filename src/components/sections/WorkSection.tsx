@@ -15,7 +15,7 @@ const projects: Project[] = [
   {
     name: 'Shed Suite',
     description:
-      'Built admin dashboards, internal tools, complex tables, filters, and frontend/backend integrations for a business management platform.',
+      'Built admin dashboards, internal tools, complex tables, filters, and frontend/backend integrations for a business management platform whose customers have sold over 250,000 sheds worth $1.7B.',
     image: 'projects/shedsuite.png',
     imageClassName: 'scale-125 group-hover:scale-135 object-center',
     url: 'https://shedsuite.com',
@@ -24,7 +24,7 @@ const projects: Project[] = [
   {
     name: 'Layer Z',
     description:
-      'Helped build the MVP from 0 to first release, creating dashboard interfaces and no-code overlay configuration tools.',
+      'Helped build the MVP from 0 to first release, creating dashboard interfaces and no-code overlay configuration tools that drove around 20% higher engagement in early deployments.',
     image: 'projects/layerz.jpeg',
     url: 'https://layerz.com/',
     tags: ['Vue', 'TypeScript']
@@ -32,7 +32,7 @@ const projects: Project[] = [
   {
     name: 'Alitu',
     description:
-      'Built frontend features, improved podcast editing workflows, and collaborated on a major UI overhaul.',
+      'Built frontend features, improved podcast editing workflows, and collaborated on a major UI overhaul for a platform used to launch over 10,000 podcasts.',
     image: 'projects/alitu.jpg',
     url: 'https://alitu.com',
     tags: ['React', 'TypeScript', 'GraphQL', 'Apollo', 'PostgreSQL']
@@ -40,7 +40,7 @@ const projects: Project[] = [
   {
     name: 'Clubview',
     description:
-      'Built features and UI for a financial analytics platform used by football clubs and leagues.',
+      'Built financial analytics and benchmarking dashboards used by all 72 English Football League clubs.',
     image: 'projects/clubview.jpg',
     url: 'https://clubview.io',
     tags: ['React', 'TypeScript', 'Node.js']

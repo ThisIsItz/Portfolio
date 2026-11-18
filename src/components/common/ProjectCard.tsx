@@ -49,7 +49,7 @@ export const ProjectCard = ({
         />
       </div>
 
-      <div className="p-6 flex flex-col grow">
+      <div className="p-6 flex flex-col grow text-left">
         <div className="flex flex-wrap items-center gap-2 mb-1">
           <h3 className="text-xl font-semibold">{name}</h3>
           {badge && (
@@ -60,7 +60,7 @@ export const ProjectCard = ({
         </div>
         <p className="text-muted-foreground mb-4">{description}</p>
 
-        <div className="flex flex-wrap gap-2 mb-4">
+        <div className="flex flex-wrap gap-2 mt-auto mb-4">
           {tags.map((tag, i) => (
             <span
               key={i}
@@ -70,7 +70,7 @@ export const ProjectCard = ({
             </span>
           ))}
         </div>
-        <div className="flex justify-end gap-4 mt-auto">
+        <div className="flex justify-end gap-4">
           {links.map((link) => (
             <a
               key={link.href}
