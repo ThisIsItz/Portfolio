@@ -1,14 +1,18 @@
 import { describe, expect, it } from 'vitest'
 import { render, screen } from '@testing-library/react'
-import { MemoryRouter } from 'react-router-dom'
 import { ProjectCard } from '@/components/common/ProjectCard'
 
 const baseProps = {
   name: 'Anchor: Breathe',
   description: 'A simple breathing app.',
   image: 'apps/anchor.png',
-  url: 'https://play.google.com/store/apps/details?id=dev.itziar.anchor',
-  linkAriaLabel: 'View Anchor: Breathe on Google Play (opens in a new tab)',
+  links: [
+    {
+      href: 'https://play.google.com/store/apps/details?id=dev.itziar.anchor',
+      ariaLabel: 'View Anchor: Breathe on Google Play (opens in a new tab)',
+      icon: <span />
+    }
+  ],
   tags: ['React Native', 'TypeScript']
 }
 
@@ -48,8 +52,9 @@ describe('ProjectCard', () => {
   it('renders an accessible external link with the right target and rel', () => {
     render(<ProjectCard {...baseProps} />)
 
-    const link = screen.getByRole('link', { name: baseProps.linkAriaLabel })
-    expect(link).toHaveAttribute('href', baseProps.url)
+    const [{ href, ariaLabel }] = baseProps.links
+    const link = screen.getByRole('link', { name: ariaLabel })
+    expect(link).toHaveAttribute('href', href)
     expect(link).toHaveAttribute('target', '_blank')
     expect(link).toHaveAttribute('rel', 'noopener noreferrer')
   })
@@ -61,20 +66,25 @@ describe('ProjectCard', () => {
     expect(screen.getByText('TypeScript')).toBeInTheDocument()
   })
 
-  it('renders an in-app link without opening a new tab when internal', () => {
+  it('renders every link, each opening in a new tab', () => {
     render(
-      <MemoryRouter>
-        <ProjectCard
-          {...baseProps}
-          url="/tbr"
-          isInternalLink
-          linkAriaLabel="Learn more about TBR"
-        />
-      </MemoryRouter>
+      <ProjectCard
+        {...baseProps}
+        links={[
+          { href: 'https://play.google.com/tbr', ariaLabel: 'Google Play', icon: <span /> },
+          { href: '/tbr', ariaLabel: 'Website', icon: <span /> }
+        ]}
+      />
     )
 
-    const link = screen.getByRole('link', { name: 'Learn more about TBR' })
-    expect(link).toHaveAttribute('href', '/tbr')
-    expect(link).not.toHaveAttribute('target')
+    expect(screen.getByRole('link', { name: 'Google Play' })).toHaveAttribute('target', '_blank')
+    expect(screen.getByRole('link', { name: 'Website' })).toHaveAttribute('href', '/tbr')
+    expect(screen.getByRole('link', { name: 'Website' })).toHaveAttribute('target', '_blank')
+  })
+
+  it('shows the badge when given one', () => {
+    render(<ProjectCard {...baseProps} badge="500+ downloads" />)
+
+    expect(screen.getByText('500+ downloads')).toBeInTheDocument()
   })
 })

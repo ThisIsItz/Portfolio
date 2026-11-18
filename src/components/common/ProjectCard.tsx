@@ -1,5 +1,10 @@
-import { ArrowRight, ExternalLink } from 'lucide-react'
-import { Link } from 'react-router-dom'
+import type { ReactNode } from 'react'
+
+export interface ProjectLink {
+  href: string
+  ariaLabel: string
+  icon: ReactNode
+}
 
 interface ProjectCardProps {
   name: string
@@ -9,14 +14,10 @@ interface ProjectCardProps {
   imageHeightClassName?: string
   imageFramed?: boolean
   imageHoverScaleClassName?: string
-  url: string
-  isInternalLink?: boolean
-  linkAriaLabel: string
+  badge?: string
+  links: ProjectLink[]
   tags: string[]
 }
-
-const linkClassName =
-  'text-foreground/80 hover:text-primary transition-colors duration-300'
 
 export const ProjectCard = ({
   name,
@@ -26,9 +27,8 @@ export const ProjectCard = ({
   imageHeightClassName = 'h-48',
   imageFramed = false,
   imageHoverScaleClassName,
-  url,
-  isInternalLink = false,
-  linkAriaLabel,
+  badge,
+  links,
   tags
 }: ProjectCardProps) => {
   const hoverScale =
@@ -50,7 +50,14 @@ export const ProjectCard = ({
       </div>
 
       <div className="p-6 flex flex-col grow">
-        <h3 className="text-xl font-semibold mb-1">{name}</h3>
+        <div className="flex flex-wrap items-center gap-2 mb-1">
+          <h3 className="text-xl font-semibold">{name}</h3>
+          {badge && (
+            <span className="px-2 py-0.5 text-xs font-semibold rounded-full bg-primary/10 text-primary">
+              {badge}
+            </span>
+          )}
+        </div>
         <p className="text-muted-foreground text-sm mb-4">{description}</p>
 
         <div className="flex flex-wrap gap-2 mb-4">
@@ -63,26 +70,20 @@ export const ProjectCard = ({
             </span>
           ))}
         </div>
-        <div className="flex justify-end mt-auto">
-          {isInternalLink ? (
-            <Link
-              to={url}
-              aria-label={linkAriaLabel}
-              className={linkClassName}
-            >
-              <ArrowRight size={20} aria-hidden="true" />
-            </Link>
-          ) : (
+        <div className="flex justify-end gap-4 mt-auto">
+          {links.map((link) => (
             <a
-              href={url}
+              key={link.href}
+              href={link.href}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label={linkAriaLabel}
-              className={linkClassName}
+              aria-label={link.ariaLabel}
+              title={link.ariaLabel}
+              className="text-foreground/80 hover:text-primary transition-colors duration-300"
             >
-              <ExternalLink size={20} aria-hidden="true" />
+              {link.icon}
             </a>
-          )}
+          ))}
         </div>
       </div>
     </div>

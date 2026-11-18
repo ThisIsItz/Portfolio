@@ -1,6 +1,10 @@
-import { ArrowRight } from 'lucide-react'
+import { ArrowRight, Globe } from 'lucide-react'
+import { FaGooglePlay } from 'react-icons/fa'
 import { SectionHeading } from '@/components/common/SectionHeading'
-import { ProjectCard } from '@/components/common/ProjectCard'
+import {
+  ProjectCard,
+  type ProjectLink
+} from '@/components/common/ProjectCard'
 
 interface AppProject {
   name: string
@@ -9,8 +13,9 @@ interface AppProject {
   imageClassName?: string
   imageFramed?: boolean
   imageHoverScaleClassName?: string
-  url: string
-  isInternalLink?: boolean
+  playStoreUrl: string
+  websiteUrl?: string
+  badge?: string
   tags: string[]
 }
 
@@ -21,8 +26,9 @@ const apps: AppProject[] = [
       'A to-be-read list for book lovers: search, scan or snap a cover to add books, filter your pile, and spin to pick your next read.',
     image: 'apps/tbr.png',
     imageFramed: true,
-    url: '/tbr',
-    isInternalLink: true,
+    playStoreUrl: 'https://play.google.com/store/apps/details?id=dev.itziar.tbr',
+    websiteUrl: '/tbr',
+    badge: '500+ downloads',
     tags: ['React Native', 'TypeScript', 'Expo', 'SQLite']
   },
   {
@@ -31,7 +37,7 @@ const apps: AppProject[] = [
       'A simple breathing app designed to help you slow down and reconnect with the present moment.',
     image: 'apps/anchor.png',
     imageFramed: true,
-    url: 'https://play.google.com/store/apps/details?id=dev.itziar.anchor',
+    playStoreUrl: 'https://play.google.com/store/apps/details?id=dev.itziar.anchor',
     tags: ['React Native', 'TypeScript', 'Expo']
   },
   {
@@ -41,9 +47,26 @@ const apps: AppProject[] = [
     image: 'apps/fichapp.png',
     imageClassName: 'object-center',
     imageHoverScaleClassName: 'group-hover:scale-105',
-    url: 'https://play.google.com/store/apps/details?id=dev.itziar.fichapp',
+    playStoreUrl: 'https://play.google.com/store/apps/details?id=dev.itziar.fichapp',
     tags: ['React Native', 'TypeScript', 'Expo', 'Supabase']
   }
+]
+
+const appLinks = (app: AppProject): ProjectLink[] => [
+  {
+    href: app.playStoreUrl,
+    ariaLabel: `View ${app.name} on Google Play (opens in a new tab)`,
+    icon: <FaGooglePlay size={18} aria-hidden="true" />
+  },
+  ...(app.websiteUrl
+    ? [
+        {
+          href: app.websiteUrl,
+          ariaLabel: `Visit the ${app.name} website (opens in a new tab)`,
+          icon: <Globe size={20} aria-hidden="true" />
+        }
+      ]
+    : [])
 ]
 
 export const AppsSection = () => {
@@ -68,13 +91,8 @@ export const AppsSection = () => {
               imageHeightClassName="h-64"
               imageFramed={app.imageFramed}
               imageHoverScaleClassName={app.imageHoverScaleClassName}
-              url={app.url}
-              isInternalLink={app.isInternalLink}
-              linkAriaLabel={
-                app.isInternalLink
-                  ? `Learn more about ${app.name}`
-                  : `View ${app.name} on Google Play (opens in a new tab)`
-              }
+              badge={app.badge}
+              links={appLinks(app)}
               tags={app.tags}
             />
           ))}

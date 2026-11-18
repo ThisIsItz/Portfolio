@@ -1,3 +1,4 @@
+import { ExternalLink } from 'lucide-react'
 import { SectionHeading } from '@/components/common/SectionHeading'
 import { ProjectCard } from '@/components/common/ProjectCard'
 
@@ -66,8 +67,13 @@ export const WorkSection = () => {
               description={project.description}
               image={project.image}
               imageClassName={project.imageClassName}
-              url={project.url}
-              linkAriaLabel={`Visit ${project.name} (opens in a new tab)`}
+              links={[
+                {
+                  href: project.url,
+                  ariaLabel: `Visit ${project.name} (opens in a new tab)`,
+                  icon: <ExternalLink size={20} aria-hidden="true" />
+                }
+              ]}
               tags={project.tags}
             />
           ))}
