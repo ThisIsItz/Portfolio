@@ -1,0 +1,27 @@
+/* Values from tbr-app: src/lib/theme/theme.ts and the app.json splash background. */
+.tbr-page {
+  --tbr-bg: #f8f4ee;
+  --tbr-surface: #ffffff;
+  --tbr-border: #e0dbd3;
+  --tbr-text: #241c17;
+  --tbr-muted: #6e6259;
+  --tbr-green: #2e5e3f;
+  --tbr-green-deep: #1f4a2c;
+  --tbr-green-soft: #c6dfca;
+  --tbr-orange-ink: #ab551c;
+
+  background-color: var(--tbr-bg);
+  color: var(--tbr-text);
+  font-family:
+    system-ui,
+    -apple-system,
+    'Segoe UI',
+    Roboto,
+    Helvetica,
+    Arial,
+    sans-serif;
+}
+
+.tbr-display {
+  font-family: 'Fraunces', Georgia, 'Times New Roman', serif;
+}
