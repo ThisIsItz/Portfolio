@@ -185,12 +185,10 @@ export const Tbr = () => {
               TBR
             </h1>
             <p className="text-sm font-semibold tracking-[0.2em] text-[var(--tbr-green)] uppercase opacity-0 animate-fade-in-delay-1">
-              Your reading list
+              For book lovers
             </p>
-            <p className="tbr-display mx-auto max-w-xl text-2xl font-semibold md:text-3xl opacity-0 animate-fade-in-delay-2">
-              Track what you want to read. Let{' '}
-              <span className="text-[var(--tbr-orange-ink)]">chance</span> pick
-              what's next.
+            <p className="tbr-display mx-auto max-w-xl text-balance text-2xl font-semibold md:text-3xl opacity-0 animate-fade-in-delay-2">
+              Never lose track of a book you want to read.
             </p>
             <div className="flex flex-col items-center gap-3 pt-2 opacity-0 animate-fade-in-delay-3">
               <GooglePlayButton />
