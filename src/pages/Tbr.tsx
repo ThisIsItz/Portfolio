@@ -1,148 +1,96 @@
 import { useEffect, type ReactNode } from 'react'
-import {
-  Ban,
-  Camera,
-  Check,
-  Dices,
-  Heart,
-  Palette,
-  PencilLine,
-  ScanBarcode,
-  Search,
-  ShoppingCart,
-  SlidersHorizontal,
-  type LucideIcon
-} from 'lucide-react'
+import { Check, Heart } from 'lucide-react'
 import { FaGooglePlay } from 'react-icons/fa'
+import { Link } from 'react-router-dom'
+import {
+  TBR_CONTENT,
+  TBR_LOCALES,
+  TBR_PATH_BY_LOCALE,
+  type TbrContent,
+  type TbrLocale
+} from '@/pages/tbrContent'
 import '@/styles/tbr.css'
 
-export const GOOGLE_PLAY_URL =
-  'https://play.google.com/store/apps/details?id=dev.itziar.tbr'
 export const PRIVACY_POLICY_URL =
   'https://itziarurbieta.notion.site/Privacy-Policy-TBR-3ce1096e5d548048a7f6e46044906eb8'
 
-// Absolute so the credit link still works if this page is served on its own.
+// Absolute so these links still work if this page is served on its own.
 const PORTFOLIO_URL = 'https://itziarurbieta.dev'
-const PAGE_TITLE = 'TBR: Your To-Be-Read List | Itziar Urbieta'
 const FRAUNCES_STYLESHEET =
   'https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap'
 
-interface Screenshot {
-  src: string
-  alt: string
+const usePageMetadata = (locale: TbrLocale, content: TbrContent) => {
+  useEffect(() => {
+    const root = document.documentElement
+    const previousTitle = document.title
+    const previousLang = root.lang
+    document.title = content.pageTitle
+    root.lang = locale
+
+    const alternateLinks = TBR_LOCALES.map((alternateLocale) => {
+      const link = document.createElement('link')
+      link.rel = 'alternate'
+      link.hreflang = alternateLocale
+      link.href = `${PORTFOLIO_URL}${TBR_PATH_BY_LOCALE[alternateLocale]}`
+      document.head.appendChild(link)
+      return link
+    })
+
+    return () => {
+      document.title = previousTitle
+      root.lang = previousLang
+      alternateLinks.forEach((link) => link.remove())
+    }
+  }, [locale, content.pageTitle])
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [locale])
 }
 
-const screenshots: Screenshot[] = [
-  {
-    src: '/tbr/library.jpg',
-    alt: 'My TBR library screen listing saved books with search, filters and sorting'
-  },
-  {
-    src: '/tbr/search.jpg',
-    alt: 'Search results for Sarah J. Maas with an Add button on each book'
-  },
-  {
-    src: '/tbr/spin.jpg',
-    alt: 'Book Picker spinning through covers to pick a random book'
-  },
-  {
-    src: '/tbr/details.jpg',
-    alt: 'Book details screen with cover, description, genres and personal notes'
-  }
-]
-
-interface Feature {
-  icon: LucideIcon
-  title: string
-  description: string
-}
-
-const features: Feature[] = [
-  {
-    icon: Search,
-    title: 'Find any book',
-    description:
-      'Type a title or an author and add it to your list in one tap.'
-  },
-  {
-    icon: ScanBarcode,
-    title: 'Scan the barcode',
-    description:
-      "Point your camera at the back of a book and it's on your list in seconds."
-  },
-  {
-    icon: PencilLine,
-    title: 'Add it your way',
-    description:
-      "Can't find it? Add it by hand, with your own cover photo, genres and notes."
-  },
-  {
-    icon: SlidersHorizontal,
-    title: 'Find the right book',
-    description:
-      'Filter by genre, author, language or length, and view your list as cards, a list or a grid.'
-  },
-  {
-    icon: ShoppingCart,
-    title: 'Buy it in a tap',
-    description:
-      'Ready to read it? Open it in your favorite bookshop, picked for your country.'
-  },
-  {
-    icon: Ban,
-    title: 'No ads, no account',
-    description:
-      'Nothing gets in the way of your list. No sign-up, and your books stay on your phone.'
-  }
-]
-
-const freeFeatures = [
-  'Unlimited books in your list',
-  'No ads',
-  'Search by title or author',
-  'ISBN barcode scanning',
-  'Manual add with your own cover',
-  'Filters, sorting and three views',
-  'Notes, genres and store links',
-  'Light and dark mode, English and Spanish',
-  'Backup and restore'
-]
-
-const proFeatures: Feature[] = [
-  {
-    icon: Camera,
-    title: 'Add a book from its cover',
-    description:
-      "Take a photo of a book's cover, or pick one from your gallery. TBR recognizes the book and fills in the title, author and details for you."
-  },
-  {
-    icon: Dices,
-    title: 'Book Picker',
-    description:
-      "Can't decide what to read next? Spin through your list, with filters if you like, and let chance choose."
-  },
-  {
-    icon: Palette,
-    title: 'Color themes',
-    description:
-      'Pick from five colors for the app, in both light and dark mode.'
-  }
-]
-
-const GooglePlayButton = () => (
+const GooglePlayButton = ({ content }: { content: TbrContent }) => (
   <a
-    href={GOOGLE_PLAY_URL}
+    href={content.googlePlayUrl}
     target="_blank"
     rel="noopener noreferrer"
-    aria-label="Get TBR on Google Play (opens in a new tab)"
+    aria-label={content.playAriaLabel}
     className="inline-flex items-center gap-3 rounded-full bg-[var(--tbr-green)] px-6 py-3 text-white transition-transform duration-300 hover:scale-105 active:scale-95 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--tbr-green)]"
   >
     <FaGooglePlay className="size-5" aria-hidden="true" />
     <span className="text-left leading-tight">
-      <span className="block text-xs opacity-85">Get it on</span>
-      <span className="block text-base font-semibold">Google Play</span>
+      <span className="block text-[0.65rem] font-medium tracking-wide uppercase opacity-85">
+        {content.playBadgeTop}
+      </span>
+      <span className="block text-base font-semibold tracking-wide">
+        Google Play
+      </span>
     </span>
   </a>
+)
+
+const LanguageSwitcher = ({ locale }: { locale: TbrLocale }) => (
+  <nav aria-label="Language" className="flex justify-end gap-1 text-sm">
+    {TBR_LOCALES.map((option) => {
+      const isCurrent = option === locale
+      return (
+        <Link
+          key={option}
+          to={TBR_PATH_BY_LOCALE[option]}
+          hrefLang={option}
+          lang={option}
+          aria-current={isCurrent ? 'page' : undefined}
+          aria-label={TBR_CONTENT[option].languageName}
+          className={`rounded-full px-2.5 py-1 font-semibold uppercase transition-colors focus-visible:outline-2 focus-visible:outline-[var(--tbr-green)] ${
+            isCurrent
+              ? 'bg-[var(--tbr-green-soft)] text-[var(--tbr-green-deep)]'
+              : 'text-[var(--tbr-muted)] hover:text-[var(--tbr-green)]'
+          }`}
+        >
+          {option}
+        </Link>
+      )
+    })}
+  </nav>
 )
 
 const SectionTitle = ({ children }: { children: ReactNode }) => (
@@ -151,15 +99,9 @@ const SectionTitle = ({ children }: { children: ReactNode }) => (
   </h2>
 )
 
-export const Tbr = () => {
-  useEffect(() => {
-    const previousTitle = document.title
-    document.title = PAGE_TITLE
-    window.scrollTo(0, 0)
-    return () => {
-      document.title = previousTitle
-    }
-  }, [])
+export const Tbr = ({ locale = 'en' }: { locale?: TbrLocale }) => {
+  const content = TBR_CONTENT[locale]
+  usePageMetadata(locale, content)
 
   return (
     <div className="tbr-page min-h-screen overflow-x-hidden">
@@ -168,32 +110,36 @@ export const Tbr = () => {
         href="#main-content"
         className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-100 focus:rounded-md focus:bg-[var(--tbr-green)] focus:px-4 focus:py-2 focus:text-white"
       >
-        Skip to content
+        {content.skipToContent}
       </a>
 
+      <header className="px-4 pt-4">
+        <LanguageSwitcher locale={locale} />
+      </header>
+
       <main id="main-content" tabIndex={-1} className="focus:outline-hidden">
-        <section id="hero" className="px-4 pt-20 pb-20">
-          <div className="mx-auto max-w-3xl space-y-6 text-center">
+        <section id="hero" className="px-4 pt-10 pb-14">
+          <div className="mx-auto max-w-3xl space-y-4 text-center">
             <img
               src="/tbr/icon.png"
-              alt="TBR app icon"
-              width={112}
-              height={112}
-              className="mx-auto size-28 rounded-3xl border border-[var(--tbr-border)] opacity-0 animate-fade-in"
+              alt={content.iconAlt}
+              width={80}
+              height={80}
+              className="mx-auto size-20 rounded-2xl opacity-0 animate-fade-in"
             />
             <h1 className="tbr-display text-7xl font-bold text-[var(--tbr-green-deep)] md:text-8xl opacity-0 animate-fade-in-delay-1">
               TBR
             </h1>
             <p className="text-sm font-semibold tracking-[0.2em] text-[var(--tbr-green)] uppercase opacity-0 animate-fade-in-delay-1">
-              For book lovers
+              {content.label}
             </p>
-            <p className="tbr-display mx-auto max-w-xl text-balance text-2xl font-semibold md:text-3xl opacity-0 animate-fade-in-delay-2">
-              Never lose track of a book you want to read.
+            <p className="tbr-display mx-auto max-w-3xl text-balance text-2xl font-semibold md:text-3xl opacity-0 animate-fade-in-delay-2">
+              {content.tagline}
             </p>
-            <div className="flex flex-col items-center gap-3 pt-2 opacity-0 animate-fade-in-delay-3">
-              <GooglePlayButton />
+            <div className="flex flex-col items-center gap-5 pt-4 opacity-0 animate-fade-in-delay-3">
+              <GooglePlayButton content={content} />
               <p className="text-sm text-[var(--tbr-muted)]">
-                Free · No ads · Pro is a one-time purchase
+                {content.availability}
               </p>
             </div>
           </div>
@@ -202,10 +148,10 @@ export const Tbr = () => {
         <section aria-labelledby="screenshots-heading" className="px-4 pb-24">
           <div className="mx-auto max-w-5xl">
             <h2 id="screenshots-heading" className="sr-only">
-              Screenshots
+              {content.screenshotsHeading}
             </h2>
             <ul className="grid grid-cols-2 gap-4 md:gap-6 lg:grid-cols-4">
-              {screenshots.map((screenshot) => (
+              {content.screenshots.map((screenshot) => (
                 <li key={screenshot.src}>
                   <img
                     src={screenshot.src}
@@ -224,9 +170,9 @@ export const Tbr = () => {
 
         <section id="features" className="px-4 py-20">
           <div className="mx-auto max-w-5xl">
-            <SectionTitle>Everything your TBR needs</SectionTitle>
+            <SectionTitle>{content.featuresTitle}</SectionTitle>
             <ul className="grid grid-cols-1 gap-5 text-left md:grid-cols-2">
-              {features.map(({ icon: Icon, title, description }) => (
+              {content.features.map(({ icon: Icon, title, description }) => (
                 <li
                   key={title}
                   className="flex items-start gap-4 rounded-2xl border border-[var(--tbr-border)] bg-[var(--tbr-surface)] p-6"
@@ -251,15 +197,17 @@ export const Tbr = () => {
 
         <section id="pricing" className="px-4 py-20">
           <div className="mx-auto max-w-5xl">
-            <SectionTitle>Free, with an optional Pro</SectionTitle>
+            <SectionTitle>{content.pricingTitle}</SectionTitle>
             <div className="grid grid-cols-1 gap-6 text-left md:grid-cols-2">
               <div className="rounded-2xl border border-[var(--tbr-border)] bg-[var(--tbr-surface)] p-8">
-                <h3 className="tbr-display mb-1 text-2xl font-bold">Free</h3>
+                <h3 className="tbr-display mb-1 text-2xl font-bold">
+                  {content.freeTitle}
+                </h3>
                 <p className="mb-6 text-[var(--tbr-muted)]">
-                  Everything you need to keep your list.
+                  {content.freeSubtitle}
                 </p>
                 <ul className="space-y-3">
-                  {freeFeatures.map((feature) => (
+                  {content.freeFeatures.map((feature) => (
                     <li key={feature} className="flex items-start gap-3">
                       <Check
                         className="mt-0.5 size-5 shrink-0 text-[var(--tbr-green)]"
@@ -273,31 +221,35 @@ export const Tbr = () => {
 
               <div className="rounded-2xl border-2 border-[var(--tbr-green)] bg-[var(--tbr-surface)] p-8">
                 <div className="mb-1 flex items-center gap-3">
-                  <h3 className="tbr-display text-2xl font-bold">Pro</h3>
-                  <span className="rounded-full bg-[var(--tbr-green-soft)] px-2.5 py-0.5 text-xs font-bold tracking-wide text-[var(--tbr-green-deep)]">
-                    ONE-TIME
+                  <h3 className="tbr-display text-2xl font-bold">
+                    {content.proTitle}
+                  </h3>
+                  <span className="rounded-full bg-[var(--tbr-green-soft)] px-2.5 py-0.5 text-xs font-bold tracking-wide text-[var(--tbr-green-deep)] uppercase">
+                    {content.proBadge}
                   </span>
                 </div>
                 <p className="mb-6 text-[var(--tbr-muted)]">
-                  No subscription. Unlocks for good:
+                  {content.proSubtitle}
                 </p>
                 <ul className="space-y-6">
-                  {proFeatures.map(({ icon: Icon, title, description }) => (
-                    <li key={title} className="flex items-start gap-4">
-                      <span className="shrink-0 rounded-full bg-[var(--tbr-green-soft)] p-2.5">
-                        <Icon
-                          className="size-5 text-[var(--tbr-green-deep)]"
-                          aria-hidden="true"
-                        />
-                      </span>
-                      <div>
-                        <h4 className="tbr-display font-semibold">{title}</h4>
-                        <p className="text-sm text-[var(--tbr-muted)]">
-                          {description}
-                        </p>
-                      </div>
-                    </li>
-                  ))}
+                  {content.proFeatures.map(
+                    ({ icon: Icon, title, description }) => (
+                      <li key={title} className="flex items-start gap-4">
+                        <span className="shrink-0 rounded-full bg-[var(--tbr-green-soft)] p-2.5">
+                          <Icon
+                            className="size-5 text-[var(--tbr-green-deep)]"
+                            aria-hidden="true"
+                          />
+                        </span>
+                        <div>
+                          <h4 className="tbr-display font-semibold">{title}</h4>
+                          <p className="text-sm text-[var(--tbr-muted)]">
+                            {description}
+                          </p>
+                        </div>
+                      </li>
+                    )
+                  )}
                 </ul>
               </div>
             </div>
@@ -307,23 +259,19 @@ export const Tbr = () => {
         <section id="privacy" className="px-4 py-20">
           <div className="mx-auto max-w-2xl space-y-6 text-center">
             <h2 className="tbr-display text-3xl font-bold text-[var(--tbr-green-deep)] md:text-4xl">
-              Your books, your phone
+              {content.privacyTitle}
             </h2>
-            <p className="text-[var(--tbr-muted)]">
-              TBR doesn't ask you to sign up. Your list lives on your device,
-              not in an account. Read the privacy policy to see exactly what
-              the app shares and why.
-            </p>
+            <p className="text-[var(--tbr-muted)]">{content.privacyBody}</p>
             <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
-              <GooglePlayButton />
+              <GooglePlayButton content={content} />
               <a
                 href={PRIVACY_POLICY_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="rounded-full border-2 border-[var(--tbr-green)] px-6 py-3 font-semibold text-[var(--tbr-green)] transition-colors hover:bg-[var(--tbr-green-soft)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--tbr-green)]"
               >
-                Privacy policy
-                <span className="sr-only"> (opens in a new tab)</span>
+                {content.privacyLink}
+                <span className="sr-only"> {content.opensInNewTab}</span>
               </a>
             </div>
           </div>
@@ -332,12 +280,12 @@ export const Tbr = () => {
 
       <footer className="border-t border-[var(--tbr-border)] px-4 py-8 text-center">
         <p className="text-sm text-[var(--tbr-muted)]">
-          Made with{' '}
+          {content.madeWith}{' '}
           <Heart
             className="inline size-4 -translate-y-px fill-[var(--tbr-green)] text-[var(--tbr-green)]"
-            aria-label="love"
+            aria-label={content.love}
           />{' '}
-          by{' '}
+          {content.by}{' '}
           <a
             href={PORTFOLIO_URL}
             className="font-semibold text-[var(--tbr-green)] underline-offset-4 hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--tbr-green)]"

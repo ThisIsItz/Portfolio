@@ -12,7 +12,8 @@ export const App = () => {
       <BrowserRouter>
         <Routes>
           <Route index element={<Home />} />
-          <Route path="tbr" element={<Tbr />} />
+          <Route path="tbr" element={<Tbr locale="en" />} />
+          <Route path="tbr/es" element={<Tbr locale="es" />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
