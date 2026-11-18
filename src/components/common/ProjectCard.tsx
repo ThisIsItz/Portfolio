@@ -58,7 +58,7 @@ export const ProjectCard = ({
             </span>
           )}
         </div>
-        <p className="text-muted-foreground text-sm mb-4">{description}</p>
+        <p className="text-muted-foreground mb-4">{description}</p>
 
         <div className="flex flex-wrap gap-2 mb-4">
           {tags.map((tag, i) => (

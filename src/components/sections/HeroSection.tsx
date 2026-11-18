@@ -34,9 +34,9 @@ export const HeroSection = () => {
             </span>{' '}
             <span className="opacity-0 animate-fade-in-delay-2">Urbieta</span>
           </h1>
-          <p className="text-lg md:text-xl text-muted-foreground max-2-2xl mx-auto opacity-0 animate-fade-in-delay-3">
+          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto opacity-0 animate-fade-in-delay-3">
             Senior Frontend Engineer building React and TypeScript products
-            that real companies run on.
+            for growing SaaS companies.
           </p>
 
           <div className="opacity-0 animate-fade-in-delay-4">

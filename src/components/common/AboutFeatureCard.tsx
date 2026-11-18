@@ -17,7 +17,7 @@ export const AboutFeatureCard = ({
       <div className="flex items-start gap-4">
         <IconBadge icon={icon} />
         <div className="text-left">
-          <h4 className="font-semibold text-lg">{title}</h4>
+          <h4 className="font-semibold text-xl">{title}</h4>
           <p className="text-muted-foreground">{description}</p>
         </div>
       </div>
